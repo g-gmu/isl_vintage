@@ -1,0 +1,403 @@
+@charset "UTF-8";
+/*
+    Created on : 29-mars-2019, 19:25:38
+    Author     : Alexis
+*/
+/* --- Technique spécialement développée sur mes connaissances en codage pour
+   optimiser la construction des pages --- */
+/* =============================================================================
+            Vue SMARTPHONE
+============================================================================= */
+* {
+  box-sizing: border-box; }
+
+html body {
+  margin-top: 1rem; }
+
+body, .container, .sous-container {
+  margin: 0rem;
+  width: 100%; }
+  body [class$="titre-imagetitre"], .container [class$="titre-imagetitre"], .sous-container [class$="titre-imagetitre"] {
+    font-family: 'Open Sans';
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: 3rem; }
+    body [class$="titre-imagetitre"] div:first-child, .container [class$="titre-imagetitre"] div:first-child, .sous-container [class$="titre-imagetitre"] div:first-child {
+      background-image: url("../img/vintage_logo.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      line-height: 3rem;
+      margin-right: 1rem; }
+      body [class$="titre-imagetitre"] div:first-child a, .container [class$="titre-imagetitre"] div:first-child a, .sous-container [class$="titre-imagetitre"] div:first-child a {
+        text-decoration: none; }
+  body [class$="titre-bouton"], .container [class$="titre-bouton"], .sous-container [class$="titre-bouton"] {
+    text-align: center;
+    margin: auto;
+    justify-content: space-arround; }
+    body [class$="titre-bouton"] form input, .container [class$="titre-bouton"] form input, .sous-container [class$="titre-bouton"] form input {
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+      padding-left: 0.5rem;
+      border: 1px solid grey; }
+    body [class$="titre-bouton"] form input:first-child, .container [class$="titre-bouton"] form input:first-child, .sous-container [class$="titre-bouton"] form input:first-child {
+      width: 80%;
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px; }
+    body [class$="titre-bouton"] form input:last-child, .container [class$="titre-bouton"] form input:last-child, .sous-container [class$="titre-bouton"] form input:last-child {
+      width: 20%;
+      color: white;
+      background-color: #A6D1E4;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px; }
+  body [class*="menu_"], .container [class*="menu_"], .sous-container [class*="menu_"] {
+    font-family: 'Open Sans';
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-top: none !important;
+    border-right: none !important;
+    border-bottom: 0.3rem solid white;
+    border-left: none !important;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase; }
+    body [class*="menu_"]:hover, .container [class*="menu_"]:hover, .sous-container [class*="menu_"]:hover {
+      border-top: none !important;
+      border-right: none !important;
+      border-bottom: 0.3rem solid #BBA9A7;
+      border-left: none !important; }
+    body [class*="menu_"] a, .container [class*="menu_"] a, .sous-container [class*="menu_"] a {
+      text-decoration: none;
+      color: black; }
+  body #zone-ici, .container #zone-ici, .sous-container #zone-ici {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border: none !important;
+    background-color: #A6D1E4;
+    text-transform: uppercase;
+    color: white;
+    font-size: 1.2rem; }
+    body #zone-ici span, .container #zone-ici span, .sous-container #zone-ici span {
+      color: black; }
+
+#zone-banniere {
+  margin-bottom: 1rem; }
+  #zone-banniere .banniere_img {
+    background-image: url("../img/slide.jpg");
+    background-repeat: no-repeat;
+    height: 13.875rem;
+    background-position: left 70%;
+    background-size: cover;
+    /* definition: cover
+        Un mot-clé dont le comportement est opposé à celui de contain.
+        L'image est redimensionnée pour être aussi grande que possible et pour
+        conserver ses proportions. L'image couvre toute la largeur ou la hauteur
+        du conteneur et les parties qui dépassent sont rognées si les proportions
+        du conteneur sont différentes (il n'y aucun espace libre sur lequel
+        on verrait la couleur d'arrière-plan).align-content:
+    */
+    resize: both;
+    overflow: hidden; }
+
+#zone-titre, #zone-menu, #zone-ici, #zone-map, #zone-info, #zone-contact, #zone-pub, #zone-banniere, #zone-deploiement, #zone-deploiement-detail {
+  display: flex;
+  flex-wrap: wrap; }
+
+#zone-pub {
+  flex-direction: column-reverse;
+  /*encours*/ }
+  #zone-pub .gazzda {
+    background-image: url("../img/gazzda.jpg");
+    background-repeat: no-repeat;
+    height: 13.875rem;
+    max-width: 100%;
+    max-height: 100%;
+    margin-bottom: 1rem;
+    margin-top: 1rem; }
+  #zone-pub #pub-col2 {
+        /*
+
+        background-image: url("../img/i-shop-sundays_1.jpg");
+        background-repeat: no-repeat;
+        background-size: contain;
+
+        p:first-child{
+            color: $color_ishop_txt;
+            font-size: 1.8rem;
+            text-align: left;
+            margin-top: fn_pxtorem(160);
+            padding-left: 1rem;
+            padding-right: 1rem;
+            background-color: $color_w;
+        }
+
+        .ishopon-bot {
+            align-items: flex-end;
+        }
+        */ }
+    #zone-pub #pub-col2 #col2-cadre1 {
+      background-image: url(../img/i-shop-sundays_1.jpg);
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: top center;
+      height: 43%; }
+    #zone-pub #pub-col2 #col2-cadre2 {
+      background-color: purple;
+      height: 57%; }
+
+[class*="sm"], [class*="md"], [class*="xl"], #pub-col2, .deploiement-menu, .deploiement_droite {
+  border: 1px solid purple; }
+
+/* temporairement*/
+[class*="partsall_ln2"] {
+  border-top: none !important;
+  border-right: none !important;
+  border-left: none !important; }
+
+/* temporairement*/
+[class*="partsici_ln3"], .titre-imagetitre, .titre-bouton, #zone-banniere, .banniere_img,
+.index_ln5sm_01, .index_ln5sm_02, .index_ln5sm_03, .index_ln5sm_04 {
+  border: none !important; }
+
+.contact_ln4sm_01,
+.contact_ln5sm_01, .contact_ln5sm_02 {
+  flex-basis: calc(100% / 12 * 0); }
+
+.partsall_ln1sm_02, .partsall_ln1sm_04 {
+  flex-basis: calc(100% / 12 * 2); }
+
+.detail_ln4sm_02, .detail_ln4sm_03, .detail_ln4sm_04, .detail_ln4sm_05 {
+  flex-basis: calc(100% / 12 * 3); }
+
+.partsall_ln1sm_03 {
+  flex-basis: calc(100% / 12 * 8); }
+
+.partsall_ln1sm_01,
+.partsall_ln2sm_01, .partsall_ln2sm_02, .partsall_ln2sm_03, .partsall_ln2sm_04, .partsall_ln2sm_05,
+.partsici_ln3sm_01,
+.contact_ln6sm_01, .contact_ln6sm_02, .contact_ln6sm_03,
+#pub-col2,
+.deploiement-menu,
+.deploiement-article_sm,
+.article-souscontainer_sm,
+.catalogue_ln4sm_02, .catalogue_ln4sm_03, .catalogue_ln4sm_04,
+.deploiement_gauche, .deploiement_droite,
+.detail_ln4sm_01,
+.index_ln5sm_01,
+#pub-col1 {
+  flex-basis: calc(100% / 12 * 12); }
+
+.deploiement_gauche, .deploiement_droite {
+  width: 100%;
+  display: flex; }
+
+.partsall_ln1sm_02, .partsall_ln1sm_04 {
+  visibility: hidden; }
+
+.contact_ln4sm_01,
+.contact_ln5sm_01, .contact_ln5sm_02,
+.catalogue_ln4sm_01,
+.index_ln4sm_01,
+.index_ln5sm_02, .index_ln5sm_03, .index_ln5sm_04 {
+  display: none; }
+
+.gauche_one {
+  display: flex;
+  width: 20%; }
+
+.gauche_four {
+  display: flex;
+  width: 80%; }
+
+/* =============================================================================
+            Vue TABLETTE
+============================================================================= */
+@media only screen and (min-width: 25rem) {
+  #zone-info {
+    width: 50%; }
+
+  #zone-pub {
+    flex-direction: row; }
+
+  [class*="sm"], .partsall_ln1md_04, #zone-info {
+    flex-basis: calc(100% / 12 *  0); }
+
+  .gauche_four {
+    flex-basis: calc(100% / 12 *  2); }
+
+  .partsall_ln1md_02, .partsall_ln1md_03,
+  #pub-col2 {
+    flex-basis: calc(100% / 12 *  3); }
+
+  .deploiement-menu {
+    flex-basis: calc(100% / 12 *  4); }
+
+  .index_ln5md_02, .index_ln5md_03, .index_ln5md_04 {
+    flex-basis: calc(100% / 12 *  4 - 1rem) !important; }
+
+  .index_ln5md_01 {
+    flex-basis: calc(100% - 1rem) !important; }
+
+  .partsall_ln2md_01, .partsall_ln2md_02, .partsall_ln2md_03, .partsall_ln2md_04, .partsall_ln2md_05 {
+    flex-basis: calc(100% / 5); }
+
+  .partsall_ln1md_01,
+  .contact_ln6md_02,
+  .contact_ln6md_03,
+  .deploiement_gauche, .deploiement_droite {
+    flex-basis: calc(100% / 12 *  6); }
+
+  .deploiement-article_md {
+    flex-basis: calc(100% / 12 *  8); }
+
+  #pub-col1 {
+    flex-basis: calc(100% / 12 *  9); }
+
+  .gauche_one {
+    flex-basis: calc(100% / 12 *  10); }
+
+  .partsici_ln3md_01,
+  .contact_ln4md_01,
+  .contact_ln6md_01,
+  .article-souscontainer_md,
+  .catalogue_ln4sm_01, .catalogue_ln4md_01, .catalogue_ln4md_02, .catalogue_ln4md_03, .catalogue_ln4md_04,
+  .detail_ln4md_01, .detail_ln4md_02, .detail_ln4md_03, .detail_ln4md_04, .detail_ln4md_05 {
+    flex-basis: calc(100% / 12 *  12); }
+
+  .gauche_four {
+    flex-wrap: wrap; }
+
+  .partsall_ln1md_04, #zone-info, .index_ln4md_01 {
+    display: none; }
+
+  .contact_ln4md_01, .contact_ln5xl_01,
+  #pub-col1,
+  .catalogue_ln4md_01, .index_ln5md_02, .index_ln5md_03, .index_ln5md_04 {
+    display: block; }
+
+  #pub-col1, .article-souscontainer_md {
+    display: flex;
+    flex-wrap: wrap; }
+
+  .souscontainer-gauche, .souscontainer-droite {
+    width: 50%; }
+
+  #zone-pub #pub-col1 > *:not(first-child) {
+    margin-top: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 0rem;
+    margin-left: 0rem;
+    height: 8.75rem; }
+  #zone-pub #pub-col1 > * {
+    margin-top: 0rem;
+    margin-right: 1rem;
+    margin-bottom: 0rem;
+    margin-left: 0rem; }
+  #zone-pub #pub-col1 .gazzda {
+    margin: 0rem;
+    height: 13.875rem; }
+  #zone-pub #pub-col1 .liam {
+    background-image: url("../img/liam-fr.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    resize: both;
+    display: block; }
+  #zone-pub #pub-col1 .vita {
+    background-image: url("../img/vita-aluvia.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    resize: both; }
+  #zone-pub #pub-col1 .degres {
+    background-image: url("../img/showroom-360.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    resize: both; } }
+/* =============================================================================
+            Vue ORDINATEUR
+============================================================================= */
+@media only screen and (min-width: 64rem) {
+  .container {
+    width: 1024px;
+    margin-left: auto;
+    margin-right: auto; }
+
+  #zone-info {
+    width: 40%;
+    float: left; }
+
+  #zone-contact {
+    width: 60%; }
+
+  [class*="sm"], [class*="md"], partsall_ln1xl_04 {
+    flex-basis: calc(100% / 12 *  0); }
+
+  .partsall_ln1xl_02, .partsall_ln1xl_03,
+  .detail_ln4xl_02, .detail_ln4xl_03, .detail_ln4xl_04, .detail_ln4xl_05 {
+    flex-basis: calc(100% / 12 *  3); }
+
+  /*tuuut*/
+  .index_ln5xl_02, .index_ln5xl_03, .index_ln5xl_04,
+  .article-souscontainer_xl,
+  .deploiement_gauche {
+    flex-basis: calc(100% / 12 *  4); }
+
+  .partsall_ln2xl_01, .partsall_ln2xl_02, .partsall_ln2xl_03, .partsall_ln2xl_04, .partsall_ln2xl_05 {
+    flex-basis: calc(100% / 5); }
+
+  .partsall_ln1xl_01,
+  .contact_ln6xl_02,
+  .contact_ln6xl_03 {
+    flex-basis: calc(100% / 12 *  6); }
+
+  .deploiement-article_xl,
+  .deploiement_droite {
+    flex-basis: calc(100% / 12 *  8); }
+
+  .partsici_ln3xl_01,
+  .contact_ln4xl_01,
+  .contact_ln5xl_01, .contact_ln5xl_02,
+  .contact_ln6xl_01,
+  .index_ln5xl_01,
+  .catalogue_ln4xl_01, .catalogue_ln4xl_02, .catalogue_ln4xl_03, .catalogue_ln4xl_04,
+  .gauche_one, .gauche_four,
+  .detail_ln4xl_01 {
+    flex-basis: calc(100% / 12 *  12); }
+
+  .partsall_ln1xl_04 {
+    display: none; }
+
+  #zone-info, .contact_ln5xl_02, #zone-banniere, .index_ln4xl_01 {
+    display: block; }
+
+  .souscontainer-gauche, .souscontainer-droite {
+    width: 100%; }
+
+  .article-souscontainer_xl {
+    width: calc(100% / 3);
+    float: left; }
+
+  .deploiement_gauche {
+    display: flex;
+    flex-wrap: wrap; } }
+/*
+display: none!important;
+display: block!important;
+visibility: hidden;
+flex-basis: calc(100% / 12 *  0);
+flex-basis: calc(100% / 12 *  1);
+flex-basis: calc(100% / 12 *  2);
+flex-basis: calc(100% / 12 *  3);
+flex-basis: calc(100% / 12 *  4);
+flex-basis: calc(100% / 12 *  5);
+flex-basis: calc(100% / 12 *  6);
+flex-basis: calc(100% / 12 *  7);
+flex-basis: calc(100% / 12 *  8);
+flex-basis: calc(100% / 12 *  9);
+flex-basis: calc(100% / 12 * 10);
+flex-basis: calc(100% / 12 * 11);
+flex-basis: calc(100% / 12 * 12);
+*/
+
+/*# sourceMappingURL=styles.css.map */
