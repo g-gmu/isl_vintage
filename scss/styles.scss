@@ -1,0 +1,718 @@
+
+/*
+    Created on : 29-mars-2019, 19:25:38
+    Author     : Alexis
+*/
+
+// --- variables ---------------------------------------------------------------
+$fontsizedefault: 16;
+$rupture_md: 400;
+$rupture_xl: 1024;
+
+$color_ssmenu: #BBA9A7;
+$color_menu: black;
+$color_ariane: #A6D1E4;
+$color_w: white;
+$color_b: black;
+$color_g: grey;
+$color_ishop_txt: #3E4A51;
+
+
+@mixin espace_bas(){
+    margin-bottom: 1rem;
+}
+@mixin espace_haut(){
+    margin-top: 1rem;
+}
+@mixin espace_padtop(){
+    padding-top: 1rem;
+}
+@mixin espace_droite(){
+    margin-right: 1rem;
+}
+
+
+@mixin margin_applic($margeall,$margedefault,$margetop,$margeright,$margebottom,$margeleft){
+    @if ($margeall == "yes"){
+        margin: $margedefault + rem;
+    } @else {
+        margin-top: $margetop + rem;
+        margin-right: $margeright + rem;
+        margin-bottom: $margebottom + rem;
+        margin-left: $margeleft + rem;
+    }
+}
+
+
+@mixin remove_margintopspace($valueinrem){
+    margin-top: $valueinrem + rem;
+}
+
+
+// --- fn_pxtorem :: fonction (conversion px en rem)
+@function fn_pxtorem ($sizeinpixel){
+    $resultat: ($sizeinpixel / $fontsizedefault);
+    @return $resultat + rem;
+}
+
+@mixin format_paddingmargin ($ptop,$pright,$pbottom,$pleft,$mtop,$mright,$mbottom,$mleft){
+    @if ($ptop > 0){
+        padding-top: $ptop + rem;
+    }
+    @if ($pright > 0){
+        padding-right: $pright + rem;
+    }
+    @if ($pbottom > 0){
+        padding-bottom: $pbottom + rem;
+    }
+    @if ($pleft > 0){
+        padding-left: $pleft + rem;
+    }
+    @if ($mtop > 0){
+        margin-top: $mtop + rem;
+    }
+    @if ($mright > 0){
+        margin-right: $mright + rem;
+    }
+    @if ($mbottom > 0){
+        margin-bottom: $mbottom + rem;
+    }
+    @if ($mleft > 0){
+        margin-left: $mleft + rem;
+    }
+}
+
+@mixin borderview (){
+    // --- 1px (rentre dans le calcul - fait apparaître l'ascensseur horizontal')
+    border: 1px solid purple;
+}
+
+@mixin font_titre {
+    font-family: 'Open Sans', sans-serif;
+}
+
+$resetsizedefaultbloc: calc(100% / 12 * 1);
+/* --- Technique spécialement développée sur mes connaissances en codage pour
+   optimiser la construction des pages --- */
+@mixin optim (){
+    flex-basis: $resetsizedefaultbloc;
+    display: block!important; // remove important
+
+}
+
+@mixin autocentrage {
+    // permet d'autocentrer un element horizontalement
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@mixin font_opensans {
+    font-family: 'Open Sans';
+}
+
+@mixin format_border($borderyesno,$bordertopsize,$borderrightsize,$borderbottomsize,$borderleftsize,$bordertype,$borderallcolor,$bordercolortop,
+$bordercolorright,$bordercolorbottom,$bordercolorleft) {
+    @if ($borderyesno == "no"){
+        // si $borderyesno == no : aucune bordure.
+        border: none!important;
+    }@else {
+        // sinon : bordure est présente.
+        @if ($borderallcolor == "no"){
+            // si $borderallcolor == no : bordures peuvent avoir des couleurs différentes.
+            @if ($bordertopsize == 0){
+                border-top: none!important;
+            }@else {
+                border-top: $bordertopsize + rem + ' ' + $bordertype + ' ' + $bordercolortop;
+            }
+            @if ($borderrightsize == 0){
+                border-right: none!important;
+            }@else {
+                border-right: $borderrightsize + rem + ' ' + $bordertype + ' ' + $bordercolorright;
+            }
+            @if ($borderbottomsize == 0){
+                border-bottom: none!important;
+            }@else {
+                border-bottom: $borderbottomsize + rem + ' ' + $bordertype + ' ' + $bordercolorbottom;
+            }
+            @if ($borderleftsize == 0){
+                border-left: none!important;
+            }@else {
+                border-left: $borderleftsize + rem + ' ' + $bordertype + ' ' + $bordercolorleft;
+            }
+
+        }@else {
+            // bordures seront toutes de la même couleur (! possibilite d'avoir 3 côté uniquement !).
+            @if ($bordertopsize == 0) {
+                border-top: none!important;
+            }@else {
+                border-top: $bordertopsize + rem + ' ' + $bordertype + ' ' + $borderallcolor;
+            }
+            @if ($borderrightsize == 0){
+                border-right: none!important;
+            }@else {
+                border-right: $borderrightsize + rem + ' ' + $bordertype + ' ' + $borderallcolor;
+            }
+            @if ($borderbottomsize == 0){
+                border-bottom: none!important;
+            }@else {
+                border-bottom: $borderbottomsize + rem + ' ' + $bordertype + ' ' + $borderallcolor;
+            }
+            @if ($borderleftsize == 0){
+                border-left: none!important;
+            }@else {
+                border-left: $borderleftsize + rem + ' ' + $bordertype + ' ' + $borderallcolor;
+            }
+        }
+
+    }
+
+}
+
+@mixin nodecoration_andcolor($color){
+    text-decoration: none;
+    color: $color;
+}
+
+@mixin formatage_vintage_titre {
+    @include font_opensans();
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: 3rem;
+}
+
+@mixin formatage_menu {
+    @include font_opensans();
+    @include format_paddingmargin(0.5,0,0.5,0,1,0,1,0);
+    @include format_border("yes",0,0,0.3,0,"solid","white","white","white","white","white");
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    &:hover{
+        @include format_border("yes",0,0,0.3,0,"solid","no",0,0,$color_ssmenu,0);
+    }
+}
+
+@mixin formatage_ariane{
+    @include format_paddingmargin(1,0,1,0,0,0,0,0);
+    @include format_border("no",0,0,0,0,"","","","","","");
+    background-color: $color_ariane;
+    text-transform: uppercase;
+    color: $color_w;
+    font-size: 1.2rem;
+}
+
+
+
+/* =============================================================================
+            Vue SMARTPHONE
+============================================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    body {
+        @include espace_haut();
+    }
+}
+
+
+body, .container, .sous-container {
+    margin: 0rem;
+    width: 100%;
+    //@include borderview();
+
+    // Développer initialement en mode computer : héritage fonctionnel - convient à un positiionnement mobile First
+    [class$="titre-imagetitre"]{
+        @include formatage_vintage_titre();
+        div:first-child {
+            background-image: url("../img/vintage_logo.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            line-height: 3rem;
+            margin-right: 1rem;
+
+            a {
+                // consigne : logo cliquable ramenant à la page d'accueil'
+                text-decoration: none;
+            }
+        }
+    }
+
+    [class$="titre-bouton"]{
+        text-align: center;
+        margin:auto;
+        justify-content: space-arround;
+        form {
+            input {
+                @include format_paddingmargin(0.5,0,0.5,0.5,0,0,0,0);
+                border: 1px solid grey;
+            }
+            input:first-child{
+                width: 80%;
+                border-top-left-radius: 5px;
+                border-bottom-left-radius: 5px;
+            }
+            input:last-child{
+                width: 20%;
+                color: $color_w;
+                background-color: $color_ariane;
+                border-top-right-radius: 5px;
+                border-bottom-right-radius: 5px;
+            }
+        }
+    }
+
+    // Développer initialement en mode computer : héritage fonctionnel - convient à un positiionnement mobile First
+    [class*="menu_"]{
+        @include formatage_menu();
+
+        a {
+            @include nodecoration_andcolor($color_menu);
+        }
+    }
+
+    // Développer initialement en mode computer : héritage fonctionnel - convient à un positiionnement mobile First
+    #zone-ici{
+        @include formatage_ariane ();
+        span {
+            color: $color_b;
+        }
+    }
+}
+
+#zone-banniere{
+
+    @include espace_bas();
+
+    .banniere_img{
+        background-image: url("../img/slide.jpg");
+        background-repeat: no-repeat;
+        height: fn_pxtorem(222);
+        background-position: left 70%;
+        background-size: cover;
+        /* definition: cover
+            Un mot-clé dont le comportement est opposé à celui de contain.
+            L'image est redimensionnée pour être aussi grande que possible et pour
+            conserver ses proportions. L'image couvre toute la largeur ou la hauteur
+            du conteneur et les parties qui dépassent sont rognées si les proportions
+            du conteneur sont différentes (il n'y aucun espace libre sur lequel
+            on verrait la couleur d'arrière-plan).align-content:
+        */
+        resize: both;
+        overflow: hidden;
+    }
+}
+
+
+#zone-titre, #zone-menu, #zone-ici, #zone-map, #zone-info, #zone-contact, #zone-pub, #zone-banniere, #zone-deploiement, #zone-deploiement-detail {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+// Inverse pub-col1 avec pub-col2
+#zone-pub{
+    flex-direction: column-reverse;
+
+    .gazzda{
+        background-image: url("../img/gazzda.jpg");
+        background-repeat: no-repeat;
+        height: fn_pxtorem(222);
+        max-width:100%;
+        max-height:100%;
+        @include espace_bas();
+        @include espace_haut();
+    }
+
+
+    /*encours*/
+
+
+
+    #pub-col2{
+
+
+        #col2-cadre1 {
+            // volontairement diviser le parent par 3 afin de gagner un peu de temps.
+            background-image: url(../img/i-shop-sundays_1.jpg);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: top center;
+            height: 43%;
+
+        }
+        #col2-cadre2 {
+            // volontairement diviser le parent par 3 afin de gagner un peu de temps.
+            background-color: purple;
+            height: 57%;
+
+        }
+        /*
+
+        background-image: url("../img/i-shop-sundays_1.jpg");
+        background-repeat: no-repeat;
+        background-size: contain;
+
+        p:first-child{
+            color: $color_ishop_txt;
+            font-size: 1.8rem;
+            text-align: left;
+            margin-top: fn_pxtorem(160);
+            padding-left: 1rem;
+            padding-right: 1rem;
+            background-color: $color_w;
+        }
+
+        .ishopon-bot {
+            align-items: flex-end;
+        }
+        */
+
+    }
+}
+
+[class*="sm"],[class*="md"],[class*="xl"],#pub-col2, .deploiement-menu, .deploiement_droite{
+    @include borderview();
+}
+
+/* temporairement*/
+[class*="partsall_ln2"]{
+    border-top: none!important;
+    border-right: none!important;
+    border-left: none!important;
+}
+/* temporairement*/
+[class*="partsici_ln3"],.titre-imagetitre,.titre-bouton, #zone-banniere, .banniere_img,
+.index_ln5sm_01, .index_ln5sm_02, .index_ln5sm_03, .index_ln5sm_04{
+    border: none!important;
+}
+
+
+
+
+.contact_ln4sm_01,
+.contact_ln5sm_01, .contact_ln5sm_02{
+    flex-basis: calc(100% / 12 * 0);
+}
+
+.partsall_ln1sm_02, .partsall_ln1sm_04{
+    flex-basis: calc(100% / 12 * 2);
+}
+
+.detail_ln4sm_02,.detail_ln4sm_03,.detail_ln4sm_04,.detail_ln4sm_05 {
+    flex-basis: calc(100% / 12 * 3);
+}
+
+.partsall_ln1sm_03{
+    flex-basis: calc(100% / 12 * 8);
+}
+
+.partsall_ln1sm_01,
+.partsall_ln2sm_01, .partsall_ln2sm_02, .partsall_ln2sm_03, .partsall_ln2sm_04, .partsall_ln2sm_05,
+.partsici_ln3sm_01,
+.contact_ln6sm_01, .contact_ln6sm_02, .contact_ln6sm_03,
+#pub-col2,
+.deploiement-menu,
+.deploiement-article_sm,
+.article-souscontainer_sm,
+.catalogue_ln4sm_02, .catalogue_ln4sm_03, .catalogue_ln4sm_04,
+.deploiement_gauche, .deploiement_droite,
+.detail_ln4sm_01,
+.index_ln5sm_01,
+#pub-col1{
+    flex-basis: calc(100% / 12 * 12);
+}
+
+.deploiement_gauche, .deploiement_droite{
+    width: 100%;
+    display: flex;
+}
+
+.partsall_ln1sm_02, .partsall_ln1sm_04{
+    visibility: hidden;
+}
+
+.contact_ln4sm_01,
+.contact_ln5sm_01, .contact_ln5sm_02,
+.catalogue_ln4sm_01,
+.index_ln4sm_01,
+.index_ln5sm_02,.index_ln5sm_03,.index_ln5sm_04{
+    display: none;
+}
+
+.gauche_one {
+    display: flex;
+    width: 20%;
+}
+.gauche_four {
+    display: flex;
+    width: 80%;
+}
+
+
+
+
+/* =============================================================================
+            Vue TABLETTE
+============================================================================= */
+@media only screen and (min-width: fn_pxtorem($rupture_md)){
+
+    #zone-info {
+        width: 50%;
+    }
+
+    // Permet de remettre dans le bon sens l'inversion du smartphone entre pub-col1 et pub-col2
+    #zone-pub{
+        flex-direction: row;
+    }
+
+    [class*="sm"], .partsall_ln1md_04, #zone-info {
+        flex-basis: calc(100% / 12 *  0);
+    }
+
+    .gauche_four {
+        flex-basis: calc(100% / 12 *  2);
+    }
+
+    .partsall_ln1md_02, .partsall_ln1md_03,
+    #pub-col2{
+        flex-basis: calc(100% / 12 *  3);
+    }
+
+    .deploiement-menu{
+        flex-basis: calc(100% / 12 *  4);
+    }
+
+    .index_ln5md_02,.index_ln5md_03,.index_ln5md_04{
+        flex-basis: calc(100% / 12 *  4 - 1rem)!important;
+    }
+    .index_ln5md_01{
+        flex-basis: calc(100% - 1rem)!important;
+    }
+
+
+
+    .partsall_ln2md_01, .partsall_ln2md_02, .partsall_ln2md_03, .partsall_ln2md_04, .partsall_ln2md_05{
+        flex-basis: calc(100% / 5);
+    }
+
+    .partsall_ln1md_01,
+    .contact_ln6md_02,
+    .contact_ln6md_03,
+    .deploiement_gauche, .deploiement_droite{
+        flex-basis: calc(100% / 12 *  6);
+    }
+
+    .deploiement-article_md{
+        flex-basis: calc(100% / 12 *  8);
+    }
+
+
+    #pub-col1{
+        flex-basis: calc(100% / 12 *  9);
+    }
+
+    .gauche_one {
+        flex-basis: calc(100% / 12 *  10);
+    }
+
+    .partsici_ln3md_01,
+    .contact_ln4md_01,
+    .contact_ln6md_01,
+    .article-souscontainer_md,
+    .catalogue_ln4sm_01, .catalogue_ln4md_01, .catalogue_ln4md_02, .catalogue_ln4md_03, .catalogue_ln4md_04,
+    .detail_ln4md_01, .detail_ln4md_02, .detail_ln4md_03, .detail_ln4md_04, .detail_ln4md_05{
+        flex-basis: calc(100% / 12 *  12);
+    }
+
+    .gauche_four{
+        flex-wrap: wrap;
+    }
+
+    .partsall_ln1md_04, #zone-info, .index_ln4md_01{
+        display: none;
+    }
+
+    .contact_ln4md_01, .contact_ln5xl_01,
+    #pub-col1,
+    .catalogue_ln4md_01,.index_ln5md_02,.index_ln5md_03,.index_ln5md_04{
+        display: block;
+    }
+
+    #pub-col1, .article-souscontainer_md {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .souscontainer-gauche, .souscontainer-droite {
+        width: 50%;
+    }
+
+    #zone-pub{
+
+
+        #pub-col1 > *:not(first-child) {
+            @include margin_applic("no",0,1,1,0,0);
+            height: fn_pxtorem(140);
+        }
+
+        #pub-col1 > * {
+            @include margin_applic("no",0,0,1,0,0);
+        }
+
+        #pub-col1{
+            .gazzda{
+                @include margin_applic("yes",0,0,0,0,0);
+                height: fn_pxtorem(222);
+            }
+
+            .liam{
+                background-image: url("../img/liam-fr.jpg");
+                background-repeat: no-repeat;
+
+                background-size: cover;
+                resize: both;
+                display: block;
+
+            }
+
+            .vita{
+                background-image: url("../img/vita-aluvia.jpg");
+                background-repeat: no-repeat;
+                background-size: cover;
+                resize: both;
+
+            }
+
+            .degres{
+                background-image: url("../img/showroom-360.jpg");
+                background-repeat: no-repeat;
+                background-size: cover;
+                resize: both;
+
+
+            }
+        }
+
+        #pub-col2{
+
+        }
+
+
+    }
+
+}
+
+
+/* =============================================================================
+            Vue ORDINATEUR
+============================================================================= */
+@media only screen and (min-width: fn_pxtorem($rupture_xl)){
+
+    .container {
+        width: 1024px;
+        @include autocentrage ();
+    }
+
+    #zone-info {
+        width: 40%;
+        float: left;
+    }
+
+    #zone-contact {
+        width: 60%;
+    }
+
+    [class*="sm"], [class*="md"], partsall_ln1xl_04{
+        flex-basis: calc(100% / 12 *  0);
+    }
+
+    .partsall_ln1xl_02, .partsall_ln1xl_03,
+    .detail_ln4xl_02,.detail_ln4xl_03,.detail_ln4xl_04,.detail_ln4xl_05{
+        flex-basis: calc(100% / 12 *  3);
+    }
+
+    /*tuuut*/
+    .index_ln5xl_02,.index_ln5xl_03,.index_ln5xl_04,
+    .article-souscontainer_xl,
+    .deploiement_gauche{
+        flex-basis: calc(100% / 12 *  4);
+    }
+
+    .partsall_ln2xl_01, .partsall_ln2xl_02, .partsall_ln2xl_03, .partsall_ln2xl_04, .partsall_ln2xl_05{
+        flex-basis: calc(100% / 5);
+    }
+
+    .partsall_ln1xl_01,
+    .contact_ln6xl_02,
+    .contact_ln6xl_03{
+        flex-basis: calc(100% / 12 *  6);
+    }
+
+    .deploiement-article_xl,
+    .deploiement_droite{
+        flex-basis: calc(100% / 12 *  8);
+    }
+
+    .partsici_ln3xl_01,
+    .contact_ln4xl_01,
+    // ci-dessous : 12 de grille sur #zone-info (40%)
+    .contact_ln5xl_01, .contact_ln5xl_02,
+    // ci-dessous : 12 de grille sur #zone-contact (60%)
+    .contact_ln6xl_01,
+    .index_ln5xl_01,
+    .catalogue_ln4xl_01,.catalogue_ln4xl_02,.catalogue_ln4xl_03,.catalogue_ln4xl_04,
+    .gauche_one, .gauche_four,
+    .detail_ln4xl_01{
+        flex-basis: calc(100% / 12 *  12);
+    }
+
+    .partsall_ln1xl_04 {
+        display: none;
+    }
+
+    #zone-info, .contact_ln5xl_02, #zone-banniere, .index_ln4xl_01 {
+        display: block;
+    }
+
+    .souscontainer-gauche, .souscontainer-droite{
+        width: 100%;
+    }
+
+    .article-souscontainer_xl{
+        width: calc(100% / 3);
+        float: left;
+    }
+
+    .deploiement_gauche {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+}
+
+
+
+
+
+
+/*
+display: none!important;
+display: block!important;
+visibility: hidden;
+flex-basis: calc(100% / 12 *  0);
+flex-basis: calc(100% / 12 *  1);
+flex-basis: calc(100% / 12 *  2);
+flex-basis: calc(100% / 12 *  3);
+flex-basis: calc(100% / 12 *  4);
+flex-basis: calc(100% / 12 *  5);
+flex-basis: calc(100% / 12 *  6);
+flex-basis: calc(100% / 12 *  7);
+flex-basis: calc(100% / 12 *  8);
+flex-basis: calc(100% / 12 *  9);
+flex-basis: calc(100% / 12 * 10);
+flex-basis: calc(100% / 12 * 11);
+flex-basis: calc(100% / 12 * 12);
+*/
