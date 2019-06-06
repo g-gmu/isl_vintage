@@ -327,49 +327,15 @@ body, .container, .sous-container {
     }
 
 
-    /*encours*/
-
-
-
     #pub-col2{
-
-
-        #col2-cadre1 {
+        #col2_cadre1 {
             // volontairement diviser le parent par 3 afin de gagner un peu de temps.
             background-image: url(../img/i-shop-sundays_1.jpg);
             background-repeat: no-repeat;
             background-size: contain;
             background-position: top center;
             height: 43%;
-
         }
-        #col2-cadre2 {
-            // volontairement diviser le parent par 3 afin de gagner un peu de temps.
-            background-color: purple;
-            height: 57%;
-
-        }
-        /*
-
-        background-image: url("../img/i-shop-sundays_1.jpg");
-        background-repeat: no-repeat;
-        background-size: contain;
-
-        p:first-child{
-            color: $color_ishop_txt;
-            font-size: 1.8rem;
-            text-align: left;
-            margin-top: fn_pxtorem(160);
-            padding-left: 1rem;
-            padding-right: 1rem;
-            background-color: $color_w;
-        }
-
-        .ishopon-bot {
-            align-items: flex-end;
-        }
-        */
-
     }
 }
 
@@ -597,12 +563,54 @@ body, .container, .sous-container {
         }
 
         #pub-col2{
+            #col2_cadre2 {
+                height: 57%;
+                background-image: url(../img/home_page_corner.png);
+                background-repeat: no-repeat;
+                background-position: bottom right;
+                position: relative;
 
+                #ouverture_heures{
+                    position: absolute;
+                    z-index: 1;
+                    color: $color_ishop_txt;
+                    font-size: 1.8rem;
+                    text-align: left;
+                    margin-left: 1rem;
+                    padding-right: 2rem;
+                    padding-bottom: 2rem;
+                    background-color: $color_w;
+                }
+
+                #ouverture_dates {
+                    position: absolute;
+                    z-index: 2;           
+                    font-size: 0.9rem;
+                    line-height: 1rem;
+                    ul {
+                        list-style: none; 
+                        margin-top: 7rem;
+                        margin-left: -1.5rem;
+                        li:before{
+                           content: "- "; 
+                        }                    
+                    }
+                }
+
+                #ouverture_suite{
+                    position: absolute;
+                    z-index: 3;
+                    background-color: $color_w;
+                    font-size: 0.9rem;
+                    margin-top: 11rem;
+                    margin-left: 9rem;
+                    padding: 0.25rem;
+                    line-height: 1rem;
+                    border-radius: fn_pxtorem(5);
+                }
+            }
         }
-
-
     }
-
 }
 
 

@@ -3,7 +3,7 @@
     Created on : 29-mars-2019, 19:25:38
     Author     : Alexis
 */
-/* --- Technique spécialement développée sur mes connaissances en codage pour
+/* --- Technique sp├®cialement d├®velopp├®e sur mes connaissances en codage pour
    optimiser la construction des pages --- */
 /* =============================================================================
             Vue SMARTPHONE
@@ -91,12 +91,12 @@ body, .container, .sous-container {
     background-position: left 70%;
     background-size: cover;
     /* definition: cover
-        Un mot-clé dont le comportement est opposé à celui de contain.
-        L'image est redimensionnée pour être aussi grande que possible et pour
+        Un mot-cl├® dont le comportement est oppos├® ├á celui de contain.
+        L'image est redimensionn├®e pour ├¬tre aussi grande que possible et pour
         conserver ses proportions. L'image couvre toute la largeur ou la hauteur
-        du conteneur et les parties qui dépassent sont rognées si les proportions
-        du conteneur sont différentes (il n'y aucun espace libre sur lequel
-        on verrait la couleur d'arrière-plan).align-content:
+        du conteneur et les parties qui d├®passent sont rogn├®es si les proportions
+        du conteneur sont diff├®rentes (il n'y aucun espace libre sur lequel
+        on verrait la couleur d'arri├¿re-plan).align-content:
     */
     resize: both;
     overflow: hidden; }
@@ -106,8 +106,7 @@ body, .container, .sous-container {
   flex-wrap: wrap; }
 
 #zone-pub {
-  flex-direction: column-reverse;
-  /*encours*/ }
+  flex-direction: column-reverse; }
   #zone-pub .gazzda {
     background-image: url("../img/gazzda.jpg");
     background-repeat: no-repeat;
@@ -116,36 +115,12 @@ body, .container, .sous-container {
     max-height: 100%;
     margin-bottom: 1rem;
     margin-top: 1rem; }
-  #zone-pub #pub-col2 {
-        /*
-
-        background-image: url("../img/i-shop-sundays_1.jpg");
-        background-repeat: no-repeat;
-        background-size: contain;
-
-        p:first-child{
-            color: $color_ishop_txt;
-            font-size: 1.8rem;
-            text-align: left;
-            margin-top: fn_pxtorem(160);
-            padding-left: 1rem;
-            padding-right: 1rem;
-            background-color: $color_w;
-        }
-
-        .ishopon-bot {
-            align-items: flex-end;
-        }
-        */ }
-    #zone-pub #pub-col2 #col2-cadre1 {
-      background-image: url(../img/i-shop-sundays_1.jpg);
-      background-repeat: no-repeat;
-      background-size: contain;
-      background-position: top center;
-      height: 43%; }
-    #zone-pub #pub-col2 #col2-cadre2 {
-      background-color: purple;
-      height: 57%; }
+  #zone-pub #pub-col2 #col2_cadre1 {
+    background-image: url(../img/i-shop-sundays_1.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: top center;
+    height: 43%; }
 
 [class*="sm"], [class*="md"], [class*="xl"], #pub-col2, .deploiement-menu, .deploiement_droite {
   border: 1px solid purple; }
@@ -313,7 +288,44 @@ body, .container, .sous-container {
     background-image: url("../img/showroom-360.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    resize: both; } }
+    resize: both; }
+  #zone-pub #pub-col2 #col2_cadre2 {
+    height: 57%;
+    background-image: url(../img/home_page_corner.png);
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    position: relative; }
+    #zone-pub #pub-col2 #col2_cadre2 #ouverture_heures {
+      position: absolute;
+      z-index: 1;
+      color: #3E4A51;
+      font-size: 1.8rem;
+      text-align: left;
+      margin-left: 1rem;
+      padding-right: 2rem;
+      padding-bottom: 2rem;
+      background-color: white; }
+    #zone-pub #pub-col2 #col2_cadre2 #ouverture_dates {
+      position: absolute;
+      z-index: 2;
+      font-size: 0.9rem;
+      line-height: 1rem; }
+      #zone-pub #pub-col2 #col2_cadre2 #ouverture_dates ul {
+        list-style: none;
+        margin-top: 7rem;
+        margin-left: -1.5rem; }
+        #zone-pub #pub-col2 #col2_cadre2 #ouverture_dates ul li:before {
+          content: "- "; }
+    #zone-pub #pub-col2 #col2_cadre2 #ouverture_suite {
+      position: absolute;
+      z-index: 3;
+      background-color: white;
+      font-size: 0.9rem;
+      margin-top: 11rem;
+      margin-left: 9rem;
+      padding: 0.25rem;
+      line-height: 1rem;
+      border-radius: 0.3125rem; } }
 /* =============================================================================
             Vue ORDINATEUR
 ============================================================================= */

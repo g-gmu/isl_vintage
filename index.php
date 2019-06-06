@@ -31,8 +31,19 @@
                         <article class="index_ln5sm_04 index_ln5md_04 index_ln5xl_04 degres"></article>
                     </div>
                     <div id="pub-col2">
-                        <div id="col2-cadre1"> </div>
-                        <div id="col2-cadre2"> </div>
+                        <div id="col2_cadre1"> </div>
+                        <div id="col2_cadre2">
+                            <div id="ouverture_heures">Ouvert chaque<br/>1er dimanche du<br/>mois (12h-18h)<br/></div>
+                            <div id="ouverture_dates">
+                                <ul>
+                                    <li>3 juin</li>
+                                    <li>1 juillet</li>
+                                    <li>5 août</li>
+                                    <li>1 septembre</li>
+                                </ul>
+                            </div>
+                            <div id="ouverture_suite">+ lire la suite</div>
+                        </div>
 
                         <!--
                         <div class="ishopon-top"/>
