@@ -44,12 +44,6 @@
                             </div>
                             <div id="ouverture_suite">+ lire la suite</div>
                         </div>
-
-                        <!--
-                        <div class="ishopon-top"/>
-                        <div class="ishopon-txt"><p>Ouvert chaque<br/>1er dimanche du<br/>mois (12h-18h)</p></div>
-                        <div class="ishopon-bot"> </div>
-                        -->
                     </div>
                 </section>
             </div>
