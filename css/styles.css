@@ -186,11 +186,11 @@ body, .container, .sous-container {
 
 /* temporairement*/
 [class*="partsici_ln3"], .titre-imagetitre, .titre-bouton, #zone-banniere, .banniere_img,
-.index_ln5sm_01, .index_ln5sm_02, .index_ln5sm_03, .index_ln5sm_04, #pub-col2 {
+.index_ln5sm_01, .index_ln5sm_02, .index_ln5sm_03, .index_ln5sm_04, #pub-col2, .contact_contactez, .contact_gauche, .info_detail {
   border: none !important; }
 
 .contact_ln4sm_01,
-.contact_ln5sm_01, .contact_ln5sm_02 {
+.contact_ln5sm_01 {
   flex-basis: calc(100% / 12 * 0); }
 
 .partsall_ln1sm_02, .partsall_ln1sm_04 {
@@ -198,6 +198,9 @@ body, .container, .sous-container {
 
 .detail_ln4sm_02, .detail_ln4sm_03, .detail_ln4sm_04, .detail_ln4sm_05 {
   flex-basis: calc(100% / 12 * 3); }
+
+.ligne_partie_gauche, .ligne_partie_droite {
+  flex-basis: calc(100% / 12 * 6); }
 
 .partsall_ln1sm_03 {
   flex-basis: calc(100% / 12 * 8); }
@@ -214,7 +217,9 @@ body, .container, .sous-container {
 .deploiement_gauche, .deploiement_droite,
 .detail_ln4sm_01,
 .index_ln5sm_01,
-#pub-col1 {
+#pub-col1,
+.contact_contactez, #form-contact, .contact_gauche, .contact_droit,
+.contact_ln5sm_02 {
   flex-basis: calc(100% / 12 * 12); }
 
 .deploiement_gauche, .deploiement_droite {
@@ -225,10 +230,11 @@ body, .container, .sous-container {
   visibility: hidden; }
 
 .contact_ln4sm_01,
-.contact_ln5sm_01, .contact_ln5sm_02,
+.contact_ln5sm_01,
 .catalogue_ln4sm_01,
 .index_ln4sm_01,
-.index_ln5sm_02, .index_ln5sm_03, .index_ln5sm_04 {
+.index_ln5sm_02, .index_ln5sm_03, .index_ln5sm_04n,
+.contact_droit {
   display: none; }
 
 .gauche_one {
@@ -238,6 +244,73 @@ body, .container, .sous-container {
 .gauche_four {
   display: flex;
   width: 80%; }
+
+.detail_all {
+  display: flex;
+  flex-direction: column;
+  width: 100%; }
+  .detail_all .detail_type {
+    font-weight: bold;
+    margin-top: 1rem;
+    margin-right: 0rem;
+    margin-bottom: 0rem;
+    margin-left: 1rem; }
+  .detail_all .detail_information {
+    margin-top: 0rem;
+    margin-right: 0rem;
+    margin-bottom: 0.5rem;
+    margin-left: 1rem; }
+
+.contact_contactez, .info_detail {
+  background-color: #D3E8F2;
+  font-size: 3rem;
+  margin-top: 1rem; }
+  .contact_contactez p, .info_detail p {
+    margin-top: 1rem;
+    margin-right: 0rem;
+    margin-bottom: 1rem;
+    margin-left: 0rem; }
+
+.formulaire-gauche, .formulaire-droite, .detail_all {
+  background-color: #A6D1E4; }
+
+#form-contact {
+  background-color: #A6D1E4; }
+  #form-contact section article {
+    margin: 1rem; }
+    #form-contact section article .ligne_partie_gauche {
+      margin-top: 0rem;
+      margin-right: 0rem;
+      margin-bottom: 0.25rem;
+      margin-left: 0rem; }
+    #form-contact section article .ligne_partie_droite {
+      background-color: pink; }
+      #form-contact section article .ligne_partie_droite input {
+        width: 100%; }
+    #form-contact section article textarea {
+      width: 100%;
+      height: 7rem; }
+  #form-contact #contact-btn-envoyer article:first-child {
+    display: flex; }
+    #form-contact #contact-btn-envoyer article:first-child div:first-child {
+      width: 10%;
+      text-align: left; }
+    #form-contact #contact-btn-envoyer article:first-child div:last-child {
+      width: 90%;
+      text-align: right; }
+  #form-contact #contact-btn-envoyer article:last-child {
+    text-align: right; }
+    #form-contact #contact-btn-envoyer article:last-child button {
+      text-transform: uppercase;
+      width: 40%;
+      padding-top: 1rem;
+      padding-right: 1rem;
+      padding-bottom: 1rem;
+      padding-left: 1rem;
+      font-weight: bold;
+      color: #A6D1E4;
+      background-color: white;
+      border-radius: 0.625rem; }
 
 /* =============================================================================
             Vue TABLETTE

@@ -16,6 +16,8 @@ $color_w: white;
 $color_b: black;
 $color_g: grey;
 $color_ishop_txt: #3E4A51;
+$color_contactlightblue: #D3E8F2;
+$color_contactdarkblue: #A6D1E4;
 
 
 @mixin espace_bas(){
@@ -416,7 +418,7 @@ body, .container, .sous-container {
 }
 /* temporairement*/
 [class*="partsici_ln3"],.titre-imagetitre,.titre-bouton, #zone-banniere, .banniere_img,
-.index_ln5sm_01, .index_ln5sm_02, .index_ln5sm_03, .index_ln5sm_04, #pub-col2{
+.index_ln5sm_01, .index_ln5sm_02, .index_ln5sm_03, .index_ln5sm_04, #pub-col2, .contact_contactez, .contact_gauche, .info_detail{
     border: none!important;
 }
 
@@ -424,7 +426,7 @@ body, .container, .sous-container {
 
 
 .contact_ln4sm_01,
-.contact_ln5sm_01, .contact_ln5sm_02{
+.contact_ln5sm_01{
     flex-basis: calc(100% / 12 * 0);
 }
 
@@ -434,6 +436,10 @@ body, .container, .sous-container {
 
 .detail_ln4sm_02,.detail_ln4sm_03,.detail_ln4sm_04,.detail_ln4sm_05 {
     flex-basis: calc(100% / 12 * 3);
+}
+
+.ligne_partie_gauche, .ligne_partie_droite{
+    flex-basis: calc(100% / 12 * 6);
 }
 
 .partsall_ln1sm_03{
@@ -452,9 +458,12 @@ body, .container, .sous-container {
 .deploiement_gauche, .deploiement_droite,
 .detail_ln4sm_01,
 .index_ln5sm_01,
-#pub-col1{
+#pub-col1,
+.contact_contactez, #form-contact, .contact_gauche, .contact_droit,
+.contact_ln5sm_02{
     flex-basis: calc(100% / 12 * 12);
 }
+
 
 .deploiement_gauche, .deploiement_droite{
     width: 100%;
@@ -466,10 +475,11 @@ body, .container, .sous-container {
 }
 
 .contact_ln4sm_01,
-.contact_ln5sm_01, .contact_ln5sm_02,
+.contact_ln5sm_01,
 .catalogue_ln4sm_01,
 .index_ln4sm_01,
-.index_ln5sm_02,.index_ln5sm_03,.index_ln5sm_04{
+.index_ln5sm_02,.index_ln5sm_03,.index_ln5sm_04n,
+.contact_droit,{
     display: none;
 }
 
@@ -480,6 +490,89 @@ body, .container, .sous-container {
 .gauche_four {
     display: flex;
     width: 80%;
+}
+
+.detail_all{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    
+    .detail_type {
+        font-weight: bold;
+        @include margin_applic("no",0,1,0,0,1);
+    }
+    .detail_information {
+        @include margin_applic("no",0,0,0,0.5,1);
+    }
+}
+
+
+
+.contact_contactez,.info_detail{
+    background-color: $color_contactlightblue;
+    font-size: 3rem;    
+    @include format_paddingmargin(0,0,0,0,1,0,0,0);
+    p {
+        @include margin_applic("no",0,1,0,1,0);
+    }
+}
+
+.formulaire-gauche,.formulaire-droite, .detail_all{
+    background-color: $color_contactdarkblue;
+}
+
+#form-contact{
+    
+    background-color: $color_contactdarkblue;
+    
+    section {
+        article {
+            // Force implicitement l'affichage en ligne
+            @include margin_applic("yes",1,0,0,0,0);
+            .ligne_partie_gauche{
+                @include margin_applic("no",0,0,0,0.25,0);
+            }
+            .ligne_partie_droite{
+                background-color: pink;                
+                input{
+                    width: 100%;
+                }
+            }
+            textarea {
+                width: 100%;
+                height: 7rem;
+            }            
+        }
+    }
+    #contact-btn-envoyer{           
+        //correspond à l'emplacement de la newsletter
+        article:first-child {
+           display: flex;           
+            
+           div:first-child{
+                width: 10%;
+                text-align: left;
+               }
+           div:last-child{
+                width: 90%;
+                text-align: right;
+                }
+            }       
+        
+        //correspond à l'emplacement du bouton envoyé.
+        article:last-child{
+            text-align: right;
+            button {
+                text-transform: uppercase;
+                width: 40%;
+                @include format_paddingmargin(1,1,1,1,0,0,0,0);
+                font-weight: bold;
+                color: $color_contactdarkblue;
+                background-color: $color_w;
+                border-radius: fn_pxtorem(10);
+            }
+        }
+    }
 }
 
 
