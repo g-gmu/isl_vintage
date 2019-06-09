@@ -309,7 +309,7 @@ body, .container, .sous-container {
 }
 
 
-#zone-titre, #zone-menu, #zone-ici, #zone-map, #zone-info, #zone-contact, #zone-pub, #zone-banniere, #zone-deploiement, #zone-deploiement-detail {
+#zone-titre, #zone-menu, #zone-ici, #zone-map, #zone-info, #zone-contact, #zone-pub, #zone-banniere, #zone-deploiement, #zone-deploiement-detail, #zone_infocontact {
     display: flex;
     flex-wrap: wrap;
 }
@@ -418,15 +418,14 @@ body, .container, .sous-container {
 }
 /* temporairement*/
 [class*="partsici_ln3"],.titre-imagetitre,.titre-bouton, #zone-banniere, .banniere_img,
-.index_ln5sm_01, .index_ln5sm_02, .index_ln5sm_03, .index_ln5sm_04, #pub-col2, .contact_contactez, .contact_gauche, .info_detail{
+.index_ln5sm_01, .index_ln5sm_02, .index_ln5sm_03, .index_ln5sm_04, #pub-col2, .contact_contactez, .contact_gauche, .info_detail, #zone_infocontact, #infocontact_info, #infocontact_contact{
     border: none!important;
 }
 
 
 
 
-.contact_ln4sm_01,
-.contact_ln5sm_01{
+.contact_ln4sm_01{
     flex-basis: calc(100% / 12 * 0);
 }
 
@@ -460,7 +459,9 @@ body, .container, .sous-container {
 .index_ln5sm_01,
 #pub-col1,
 .contact_contactez, #form-contact, .contact_gauche, .contact_droit,
-.contact_ln5sm_02{
+#zone_infocontact, #infocontact_info,#infocontact_contact,
+#contenu_gauche, #contenu_droit,
+#info_titre,#info_contenu,#contact_titre,#contact_contenu{
     flex-basis: calc(100% / 12 * 12);
 }
 
@@ -475,11 +476,11 @@ body, .container, .sous-container {
 }
 
 .contact_ln4sm_01,
-.contact_ln5sm_01,
 .catalogue_ln4sm_01,
 .index_ln4sm_01,
 .index_ln5sm_02,.index_ln5sm_03,.index_ln5sm_04n,
-.contact_droit,{
+.contact_droit,
+#contenu_droit{
     display: none;
 }
 
@@ -573,8 +574,108 @@ body, .container, .sous-container {
             }
         }
     }
+    
+    
+    
+    
+    
+    
 }
 
+/* Grosse modification */
+#zone_infocontact{
+    @include margin_applic("no",0,1,0,1,0);
+    display: flex;
+    flex-direction: column;
+    
+    #infocontact_info{
+        margin-bottom: 1rem!important;
+        background-color: $color_contactdarkblue;
+        #info_titre {
+            background-color: $color_contactlightblue;
+            @include format_paddingmargin(1,0,1,0,0,0,0,0);
+            font-size: 2.5rem;
+        }
+        #info_contenu{
+            
+            .info_contenu_type{
+                font-weight: bold;
+                @include margin_applic("no",0,0.5,0,0,1);
+            }
+            .info_contenu_info{
+                @include margin_applic("no",0,0,0,0,1);
+            }
+            .info_contenu_info:last-child{
+                @include margin_applic("no",0,0,0,0.5,1);
+            }
+        }
+    }
+    
+    #infocontact_contact{
+        background-color: $color_contactdarkblue;
+        #contact_titre{
+            background-color: $color_contactlightblue;
+            @include format_paddingmargin(1,0,1,0,0,0,0,0);
+            font-size: 2.5rem;
+        }
+        #contact_contenu{
+            
+            #contenu_gauche{
+                
+                #newsletter{
+                    display:flex;                  
+                    div {
+                        display: inline-block;
+                    }
+                    
+                    div:first-child{
+                        width: 10%;
+                        text-align: left;
+                    }
+                    div:last-child{
+                        width: 90%;
+                        text-align: right;
+                    }
+                }
+                
+                #contact-btn-envoyer{
+                    text-align: right;
+                    button {
+                        width: 45%;
+                        border-radius: fn_pxtorem(10);
+                        @include format_paddingmargin(1,1,1,1,0,0,0.5,0);
+                        background-color: $color_w;
+                        text-transform: uppercase;
+                        color: $color_contactdarkblue;
+                        font-weight: bold;
+                    }
+                }
+                
+                .gauche_ligne{
+                    @include format_paddingmargin(0,0,0,0,0.5,1,0.5,1);
+                    .in_ligne_cotgauche,.in_ligne_cotdroite{
+                        flex-basis: (100% / 12 * 12);
+                    }                
+                    textarea{
+                        width: 100%;
+                        height: 10rem;
+                    }                       
+                
+                    .in_ligne_cotdroite{
+                        input{
+                            width: 100%;
+                        }
+                    }                
+                }
+            }            
+        }
+    }
+    
+    
+    
+    
+    
+}
 
 
 
@@ -582,9 +683,17 @@ body, .container, .sous-container {
             Vue TABLETTE
 ============================================================================= */
 @media only screen and (min-width: fn_pxtorem($rupture_md)){
+    
+    .isl_google{
+        border: none!important;
+    }
 
-    #zone-info {
+    #zone-info, #zone-contact {
         width: 50%;
+    }
+    
+    #zone-info {
+        float: left;
     }
 
     // Permet de remettre dans le bon sens l'inversion du smartphone entre pub-col1 et pub-col2
@@ -592,7 +701,7 @@ body, .container, .sous-container {
         flex-direction: row;
     }
 
-    [class*="sm"], .partsall_ln1md_04, #zone-info {
+    [class*="sm"], .partsall_ln1md_04 {
         flex-basis: calc(100% / 12 *  0);
     }
 
@@ -625,9 +734,23 @@ body, .container, .sous-container {
     .partsall_ln1md_01,
     .contact_ln6md_02,
     .contact_ln6md_03,
-    .deploiement_gauche, .deploiement_droite{
+    .deploiement_gauche, .deploiement_droite,
+    #zone-info, #zone-contact{
         flex-basis: calc(100% / 12 *  6);
+    }    
+
+    #contenu_gauche,#contenu_droit{
+        flex-basis: calc(100% / 12 *  6 - 0.10rem);        
     }
+    
+    #infocontact_info{
+        flex-basis: calc(100% / 12 *  4 - 0.5rem);
+    }
+    #infocontact_contact{
+        flex-basis: calc(100% / 12 *  8 - 0.5rem);
+    }
+    
+    
 
     .deploiement-article_md{
         flex-basis: calc(100% / 12 *  8);
@@ -647,7 +770,9 @@ body, .container, .sous-container {
     .contact_ln6md_01,
     .article-souscontainer_md,
     .catalogue_ln4sm_01, .catalogue_ln4md_01, .catalogue_ln4md_02, .catalogue_ln4md_03, .catalogue_ln4md_04,
-    .detail_ln4md_01, .detail_ln4md_02, .detail_ln4md_03, .detail_ln4md_04, .detail_ln4md_05{
+    .detail_ln4md_01, .detail_ln4md_02, .detail_ln4md_03, .detail_ln4md_04, .detail_ln4md_05,
+    #zone_infocontact,
+    #info_titre,#info_contenu,#contact_titre,#contact_contenu{
         flex-basis: calc(100% / 12 *  12);
     }
 
@@ -655,13 +780,14 @@ body, .container, .sous-container {
         flex-wrap: wrap;
     }
 
-    .partsall_ln1md_04, #zone-info, .index_ln4md_01{
+    .partsall_ln1md_04, .index_ln4md_01{
         display: none;
     }
 
-    .contact_ln4md_01, .contact_ln5xl_01,
+    .contact_ln4md_01,
     #pub-col1,
-    .catalogue_ln4md_01,.index_ln5md_02,.index_ln5md_03,.index_ln5md_04{
+    .catalogue_ln4md_01,.index_ln5md_02,.index_ln5md_03,.index_ln5md_04,
+    #contenu_droit{
         display: block;
     }
 
@@ -779,8 +905,51 @@ body, .container, .sous-container {
             }
         }
     }
+    
+    
+    /* Grosse modificaiton */
+    
+    #zone_infocontact{        
+    flex-direction: row;
+    
+    
+        #infocontact_info{
+            margin-bottom: 0!important;
+            margin-right: 1rem;
+        }
+        
+        #infocontact_contact{            
+            #contact_contenu{
+                display: flex;    
+                justify-content: space-between;
+                #contenu_gauche{
+                    textarea{
+                        display: none!important;
+                    }
+                    
+                }
+                #contenu_droit{
+                    flex-basis: calc(100% / 12 * 6 - 0.5 rem);
+                    padding-right: 1rem;
+                    padding-bottom: 1rem;
+                    
+                    textarea {
+                        width: 100%;
+                        height: 14rem;
+                        margin-top: 1rem;
+                    }
+                }
+            }
+        }
+    }
 }
 
+.isl_google {
+    iframe {
+        width: 100%;
+        height: 15rem;
+    }
+}
 
 /* =============================================================================
             Vue ORDINATEUR
@@ -834,8 +1003,6 @@ body, .container, .sous-container {
 
     .partsici_ln3xl_01,
     .contact_ln4xl_01,
-    // ci-dessous : 12 de grille sur #zone-info (40%)
-    .contact_ln5xl_01, .contact_ln5xl_02,
     // ci-dessous : 12 de grille sur #zone-contact (60%)
     .contact_ln6xl_01,
     .index_ln5xl_01,
@@ -849,7 +1016,7 @@ body, .container, .sous-container {
         display: none;
     }
 
-    #zone-info, .contact_ln5xl_02, #zone-banniere, .index_ln4xl_01 {
+    #zone-info, #zone-banniere, .index_ln4xl_01 {
         display: block;
     }
 

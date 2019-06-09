@@ -22,98 +22,98 @@
                      car : j'applique une "cassure" sur les sections afin de 
                      redéfinir facilement un nouveau conteneur flex.         -->
                 <section id="zone-map">
-                    <article class="contact_ln4sm_01 contact_ln4md_01 contact_ln4xl_01">map_map</article>
+                    <article class="contact_ln4sm_01 contact_ln4md_01 contact_ln4xl_01 isl_google">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4255.260145179844!2d5.562410084500987!3d50.64211001811351!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c0fa164d5c4969%3A0xd379a00de93c696!2sRue+St+Laurent+33%2C+4000+Li%C3%A8ge!5e0!3m2!1sfr!2sbe!4v1560084674647!5m2!1sfr!2sbe" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    </article>
                 </section>
             </div>
         </div>
               
-        
         <div class="container">
             <div class="sous-container">
-                <!-- bloc zone-info ---------------------------------------- -->
-                <!-- contact_ : balise propre à la page contact.php          -->
-                <section id="zone-info">
-                    <article class="contact_ln5sm_01 contact_ln5md_01 contact_ln5xl_01">info-information</article>
-                    <article class="contact_ln5sm_02 contact_ln5md_02 contact_ln5xl_02 info_detail">
-                        <p>Infos contact !</p>
-                    </article>
-                    <div class="detail_all">
-                        <label class="detail_type">Adresse:</label>
-                        <label class="detail_information">33 rue Saint-Laurent 4000 Liège</label>
-                        <label class="detail_type">Email:</label>
-                        <label class="detail_information">vintage@lab.com</label>
-                        <label class="detail_type">Site:</label>
-                        <label class="detail_information">www.vlab.com</label>
+                <!-- bloc zone-infocontact ------------------------------------- -->
+                <div id="zone_infocontact">
+                    <!-- =======================================================
+                            Cause à une grosse modification ce 09.06.19 impliquant
+                            une modification des mockups et de la structure globale
+                            du projet : je me suis passé des balises contact au profit
+                            de ma balise id.
+                            Elles ont étés remises pour la forme (temporairement).
+                            Idem pour la ligne id="infocontact_contact
+                         ======================================================= -->
+                    <div id="infocontact_info" class="contact_ln5sm_01 contact_ln5md_01 contact_ln5xl_01">
+                        <div id="info_titre">Infos-contact !</div>
+                        <div id="info_contenu">
+                            <div class="info_contenu_type">Adresse:</div>
+                            <div class="info_contenu_info">33 Rue Saint-Laurent 4000 Liège</div>
+                            <div class="info_contenu_type">Email:</div>
+                            <div class="info_contenu_info">vintage@lab.com</div>
+                            <div class="info_contenu_type">Tel:</div>
+                            <div class="info_contenu_info">+32 4 223 11 31</div>
+                            <div class="info_contenu_type">Site:</div>
+                            <div class="info_contenu_info">www.vlab.com</div>
+                            
+                        </div>
                     </div>
-                </section>
+                    <div id="infocontact_contact" class="contact_ln5sm_02 contact_ln5md_02 contact_ln5xl_02">
+                        <form id="form-contact" action="contact.php" method="post">
+                            <div id="contact_titre">Contactez-nous !</div>
+                            <div id="contact_contenu">
+                                <div id="contenu_gauche">
+                                    <!-- ci-dessous : la balise n'est pas obligatoire mais facilite grandement son positionnement -->
+                                    <article class="gauche_ligne">
+                                        <div class="in_ligne_cotgauche">
+                                            <label for="name">Nom : </label>
+                                        </div>
+                                        <div class="in_ligne_cotdroite">
+                                            <input type="text" id="name" name="user_name"/>
+                                        </div>
+                                    </article>
+                                    <article class="gauche_ligne">
+                                        <div class="in_ligne_cotgauche">
+                                            <label for="firstname">Prénom : </label>
+                                        </div>
+                                        <div class="in_ligne_cotdroite">
+                                            <input type="text" id="firstname" name="user_firstname"/>
+                                        </div>
+                                    </article>
+                                    <article class="gauche_ligne">
+                                        <div class="in_ligne_cotgauche">
+                                            <label for="email">Email : </label>
+                                        </div>
+                                        <div class="in_ligne_cotdroite">
+                                            <input type="email" id="email" name="user_email"/>
+                                        </div>
+                                    </article>
+                                    
+                                    <article id="areamask1" class="gauche_ligne">
+                                        <textarea placeholder="Un commentaire ?"></textarea>
+                                    </article>
+                                    
+                                    <article id="newsletter" class="gauche_ligne">
+                                        <div>
+                                            <input type="checkbox" id="checkbox" name="checkbox"/>
+                                        </div>
+                                        <div>
+                                            <label for="checkbox">Je désire recevoir des newsletters</label>
+                                        </div>
+                                    </article>
+                                    <article id="contact-btn-envoyer" class="gauche_ligne">
+                                        <button type="submit">envoyer</button>
+                                    </article>
+                                </div>
+                                <div id="contenu_droit">
+                                    
+                                    <article id="areamask2" class="gauche_ligne">
+                                        <textarea placeholder="Un commentaire ?"></textarea>
+                                    </article>                                    
+                                    
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
-                
-        <div class="container">
-            <div class="sous-container">
-                <!-- bloc zone-contact ------------------------------------- -->
-                <!-- contact_ : balise propre à la page contact.php          -->
-                <section id="zone-contact">
-                    <article class="contact_ln6sm_01 contact_ln6md_01 contact_ln6xl_01 contact_contactez">
-                        <p>Contactez-nous !</p>
-                    </article>
-                    <!--  ======================================================
-                                DEBUT du formulaire
-                            Englobe le balisage responsive car je souhaite pouvoir
-                            déployer facilement la position de mes blocs. 
-                            Application sur formulaire d'un flex-basis de 12.
-                          ======================================================  -->
-                    <form id="form-contact" action="contact.php" method="post">                    
-                        <section class="contact_ln6sm_02 contact_ln6md_02 contact_ln6xl_02 contact_gauche">
-                            <article class="contact-ligne">
-                                <div class="ligne_partie_gauche">
-                                    <label for="name">Nom : </label>
-                                </div>
-                                <div class="ligne_partie_droite">
-                                    <input type="text" id="name" name="user_name"/>
-                                </div>
-                            </article>
-                            <article class="contact-ligne">
-                                <div class="ligne_partie_gauche">
-                                    <label for="firstname">Prénom : </label>
-                                </div>
-                                <div class="ligne_partie_droite">
-                                    <input type="text" id="firstname" name="user_firstname"/>
-                                </div>
-                            </article>
-                            <article class="contact-ligne">
-                                <div class="ligne_partie_gauche">
-                                    <label for="email">E-mail : </label>
-                                </div>
-                                <div class="ligne_partie_droite">
-                                    <input type="text" id="email" name="user_email"/>
-                                </div>
-                            </article>
-                            <article>
-                                <textarea placeholder="Un commentaire ?"></textarea>
-                            </article>
-                        </section>
-                        <section class="contact_ln6sm_03 contact_ln6md_03 contact_ln6xl_03 contact_droit">C</section>
-                        <section id="contact-btn-envoyer">
-                            <article>
-                                <div>
-                                    <input type="checkbox" id="checkbox" name="checkbox"/>
-                                </div>
-                                <div>
-                                    <label for="checkbox">Je désire recevoir des newsletters</label>
-                                </div>                                                                
-                            </article>
-                            <article>
-                                <button id="contact-button" type="submit">envoyer</button>
-                            </article>
-                        </section>
-                    </form>
-                    <!-- ======================================================= 
-                                FIN du formulaire
-                         =======================================================  -->
-                </section>
-            </div>
-        </div>
-
     </body>
 </html>
