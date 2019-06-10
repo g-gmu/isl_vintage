@@ -27,6 +27,14 @@
             <article class="partsall_ln2sm_01 partsall_ln2md_01 partsall_ln2xl_01 menu_accueil">
                 <?php include './includes/liens/lien-vintage-home.php';  ?>
             </article>
+            <!-- ===============================================================
+                        Explications:
+                    - Chaque include contient une url vers une page choisie. 
+                    - l'URL ci-dessous affichait un lien vers la page meubles.php 
+                    que je modifie ce 10.06.19 pour qu'elle pointe vers la pages 
+                    meubles-chaises.php (sa future page par défaut à l'ouverture
+                    des meubles).
+                 =============================================================== -->
             <article class="partsall_ln2sm_02 partsall_ln2md_02 partsall_ln2xl_02 menu_meubles">
                 <?php include './includes/liens/lien-vintage-meubles.php';  ?>
             </article>

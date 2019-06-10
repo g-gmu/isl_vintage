@@ -19,6 +19,17 @@ $color_ishop_txt: #3E4A51;
 $color_contactlightblue: #D3E8F2;
 $color_contactdarkblue: #A6D1E4;
 
+@mixin noborder(){
+    border: none!important;
+}
+
+@mixin border_articlesmartphone(){
+    border-top: fn_pxtorem(1) solid grey;
+    border-left: none!important;
+    border-bottom: fn_pxtorem(1) solid grey;
+    border-right: none!important;
+}
+
 
 @mixin espace_bas(){
     margin-bottom: 1rem;
@@ -423,8 +434,6 @@ body, .container, .sous-container {
 }
 
 
-
-
 .contact_ln4sm_01{
     flex-basis: calc(100% / 12 * 0);
 }
@@ -480,7 +489,8 @@ body, .container, .sous-container {
 .index_ln4sm_01,
 .index_ln5sm_02,.index_ln5sm_03,.index_ln5sm_04n,
 .contact_droit,
-#contenu_droit{
+#contenu_droit,
+.sous_menu{
     display: none;
 }
 
@@ -671,10 +681,82 @@ body, .container, .sous-container {
         }
     }
     
-    
-    
-    
-    
+    /*  ************************************************************************ */
+}
+
+#zone-deploiement{
+    .deploiement-menu{
+        @include noborder();
+        ul{            
+            list-style: none;    
+            padding: 0;
+            margin-right: 2rem;
+            a {
+                color: black;
+                text-decoration: none;
+            }
+            .menu{                
+                font-size: 1.2rem;
+                text-transform: uppercase;
+                font-weight: bold; 
+                border-bottom: fn_pxtorem(1) solid grey;
+                margin-bottom: 0.5rem;
+            }
+            .menu::before{
+                content: "--";
+                color: transparent;
+            }
+            .menu:hover{
+                background-color: $color_ariane;
+            }
+            .sous_menu{
+                margin-left: 0.5rem;
+            }
+        }        
+    }
+    .deploiement-article_sm{
+        @include noborder();
+        .article-souscontainer_sm:first-child{
+            @include border_articlesmartphone();
+            margin-top: 0!important;
+        }
+        
+        .article-souscontainer_sm{
+            @include border_articlesmartphone();
+            padding-right: 2rem;
+            padding-left: 0.5rem;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            .souscontainer-gauche{
+
+            }
+            .souscontainer-droite{
+                .model{
+                    @include noborder();
+                    margin-top: 1rem;
+                    color: $color_ariane;
+                    font-weight: bold;
+                    font-size: 1.9rem;
+                }
+                .texte{
+                    @include noborder();
+                    padding-top: 1rem;
+                    padding-bottom: 0.5rem;
+                }
+                .prix {
+                    @include noborder();
+                    text-align: right;
+                    background-color: $color_ariane;
+                    font-weight: bold;
+                    color: $color_w;
+                    padding-top: 0.1rem;
+                    padding-bottom: 0.1rem;
+                    padding-right: 0.1rem;
+                    margin-bottom: 1.5rem;
+                }
+            }
+        }
+    }
 }
 
 
@@ -715,7 +797,7 @@ body, .container, .sous-container {
     }
 
     .deploiement-menu{
-        flex-basis: calc(100% / 12 *  4);
+        flex-basis: calc(100% / 12 *  3);
     }
 
     .index_ln5md_02,.index_ln5md_03,.index_ln5md_04{
@@ -753,7 +835,7 @@ body, .container, .sous-container {
     
 
     .deploiement-article_md{
-        flex-basis: calc(100% / 12 *  8);
+        flex-basis: calc(100% / 12 *  9);
     }
 
 
@@ -787,7 +869,7 @@ body, .container, .sous-container {
     .contact_ln4md_01,
     #pub-col1,
     .catalogue_ln4md_01,.index_ln5md_02,.index_ln5md_03,.index_ln5md_04,
-    #contenu_droit{
+    #contenu_droit, .sous_menu{
         display: block;
     }
 
@@ -942,6 +1024,112 @@ body, .container, .sous-container {
             }
         }
     }
+    
+    /* ************************************************************************* */
+    
+    #zone-deploiement{
+        .deploiement-menu{
+            .sous_menu{
+                padding-left: 2.5rem;
+                span:hover{
+                    background-color: $color_ariane;
+                }
+            }
+        }
+        
+        /*  ====================================================================    
+                comportement anormal : je me suis retrouvé dans l'obligation de 
+                désactiver le comportement hérité de _sm sur cette page. 
+                    - A contrôler
+                        : fonctionnement du blindage inter-ecran
+                        : utilisation de balises générique au lieu de _sm _md
+            ====================================================================    */
+        .deploiement-article_sm, .article-souscontainer_sm{
+            display: none;
+        }
+        .deploiement-article_md{
+            display: block; 
+            margin-top: 1rem;
+            .article-souscontainer_md:first-child{
+                border: fn_pxtorem(1) solid grey!important;
+            }
+            .article-souscontainer_md{
+                padding-top: 1rem;
+                padding-left: 0rem;
+                padding-bottom: 1rem;
+                padding-right: 0rem;
+                display: flex;
+                width: 100%;
+                border: fn_pxtorem(1) solid grey!important;
+                
+                .souscontainer-gauche{
+                    flex-basis: calc(100% / 12 * 6 - 0.5rem)!important;
+                    margin-right: 0.5rem;
+                    padding: 0;
+                    [class*="image"]{
+                        @include noborder();
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        background-size: contain;
+                        height: 100%;
+                    }
+                    .image1{                        
+                        background-image: url(../img/content/IMG_7957x_z_275x275.jpg);                        
+                    }
+                    .image2{                        
+                        background-image: url(../img/content/IMG_5792_275x275.jpg);                        
+                    }
+                    .image3{                        
+                        background-image: url(../img/content/IMG_06579_275x275.jpg);                        
+                    }
+                    .image4{                        
+                        background-image: url(../img/content/IMG_3291_275x275.jpg);                        
+                    }
+                    .image5{
+                        background-image: url(../img/content/IMG_5793_275x275.jpg);
+                    }
+                    .image6{
+                        background-image: url(../img/content/IMG_0797_275x275.jpg);
+                    }
+                    .image7{
+                        background-image: url(../img/content/IMG_1898_275x275.jpg);
+                    }
+                    .image8{
+                        background-image: url(../img/content/bert-jn-zw_275x275.jpg);                        
+                    }
+                }
+                .souscontainer-droite{
+                    flex-basis: calc(100% / 12 * 6 - 0.5rem)!important;
+                    margin-left: 0.5rem;
+                    padding: 0;
+                    
+                    .model,.texte,.prix{
+                        margin: 0;
+                        padding: 0;
+                    }
+                    
+                    .model {
+                        margin-bottom: 0.5rem;
+                    }
+                    .texte {
+                        
+                    }
+                    .prix {
+                        margin-top: 1rem;
+                        padding: 0.2rem;
+                    }
+                }
+            }
+        }
+    }
+    
+    
+    
+    
+    /* ************************************************************************* */
+    
+    
+    
 }
 
 .isl_google {
@@ -975,13 +1163,11 @@ body, .container, .sous-container {
     }
 
     .partsall_ln1xl_02, .partsall_ln1xl_03,
-    .detail_ln4xl_02,.detail_ln4xl_03,.detail_ln4xl_04,.detail_ln4xl_05{
+    .detail_ln4xl_02,.detail_ln4xl_03,.detail_ln4xl_04,.detail_ln4xl_05, .deploiement-menu{
         flex-basis: calc(100% / 12 *  3);
     }
 
-    /*tuuut*/
-    .index_ln5xl_02,.index_ln5xl_03,.index_ln5xl_04,
-    .article-souscontainer_xl,
+    .index_ln5xl_02,.index_ln5xl_03,.index_ln5xl_04
     .deploiement_gauche{
         flex-basis: calc(100% / 12 *  4);
     }
@@ -998,7 +1184,16 @@ body, .container, .sous-container {
 
     .deploiement-article_xl,
     .deploiement_droite{
-        flex-basis: calc(100% / 12 *  8);
+        flex-basis: calc(100% / 12 *  9);        
+    }
+    
+    .nno {
+        display: flex!important;
+        width: 100%;
+        flex-wrap: wrap!important;
+        flex-basis: calc(100% / 12 *  9);
+        background-color: transparent;
+        justify-content: space-between;
     }
 
     .partsici_ln3xl_01,
@@ -1008,7 +1203,8 @@ body, .container, .sous-container {
     .index_ln5xl_01,
     .catalogue_ln4xl_01,.catalogue_ln4xl_02,.catalogue_ln4xl_03,.catalogue_ln4xl_04,
     .gauche_one, .gauche_four,
-    .detail_ln4xl_01{
+    .detail_ln4xl_01,
+    #zone-deploiement {
         flex-basis: calc(100% / 12 *  12);
     }
 
@@ -1020,23 +1216,84 @@ body, .container, .sous-container {
         display: block;
     }
 
+    
     .souscontainer-gauche, .souscontainer-droite{
         width: 100%;
     }
 
+    /*
     .article-souscontainer_xl{
         width: calc(100% / 3);
         float: left;
     }
+    */
+    
 
     .deploiement_gauche {
         display: flex;
         flex-wrap: wrap;
     }
-
+  
+    
+    #zone-deploiement{
+        .deploiement-menu{   
+        }
+        
+              
+        .nno{
+            .nne:nth-of-type(3n+1){
+                margin-left: 0rem;
+            }
+            .nne:last-child{
+                margin-right: calc(100% / 12 * 4 + 0.25rem);
+            }
+            .nne {
+                background-color: transparent;
+                flex-basis: calc(100% / 12 * 4 - 0.5rem);
+                height: 32rem;
+                flex-direction: column;
+                margin: 0rem; 
+                margin-bottom: 1rem;
+                
+                .souscontainer-gauche{
+                    
+                }
+                .souscontainer-droite{
+                    margin: 0rem!important;
+                    padding-left: 0.5rem;
+                    padding-right: 0.5rem;
+                    
+                    
+                    .model{
+                        margin-top: 0.5rem!important;
+                    }
+                    .texte{
+                        height: 8rem;
+                    }
+                    .prix{
+                        text-align: right;
+                        margin-top: 2.3rem;
+                        background-color: $color_w;
+                    }
+                }                
+            } 
+            .nne:hover{  
+                box-shadow: 1px 1px 12px grey;
+                .souscontainer-droite{
+                    .prix{
+                        background-color: $color_ariane;
+                    }
+                }
+            }
+        }                        
+    }
+    
+    
+    
+    
+    
+    
 }
-
-
 
 
 

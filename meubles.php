@@ -30,7 +30,24 @@
             <div class="sous-container">
                 <!-- bloc zone-deploiement ------------------------------------- -->
                 <section id="zone-deploiement">
-                    <div class="deploiement-menu">deploiement-menu</div>
+                    <div class="deploiement-menu">
+                        <ul>
+                            <li class="menu">Chaises</li>
+                            <ul>
+                                <li class="sous_menu">Cuisine</li>
+                                <li class="sous_menu">Salle à manger</li>
+                            </ul>
+                            <li class="menu">Tables</li>
+                            <ul>
+                                <li class="sous_menu">Basse</li>
+                                <li class="sous_menu">Haute</li>
+                                <li class="sous_menu">Chevet</li>
+                                <li class="sous_menu">Desserte</li>
+                            </ul>
+                            <li class="menu">Armoires</li>
+                            <li class="menu">Tables</li>
+                        </ul>
+                    </div>
                     <div class="deploiement-article_sm deploiement-article_md deploiement-article_xl">
                         <!-- deploiement-article -->
                         <div class="article-souscontainer_sm article-souscontainer_md article-souscontainer_xl">
