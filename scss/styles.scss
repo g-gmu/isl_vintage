@@ -30,6 +30,11 @@ $color_contactdarkblue: #A6D1E4;
     border-right: none!important;
 }
 
+@mixin url_nodecoration($textecolor){
+    text-decoration: none;
+    color: $textecolor;
+}
+
 
 @mixin espace_bas(){
     margin-bottom: 1rem;
@@ -93,6 +98,114 @@ $color_contactdarkblue: #A6D1E4;
     @if ($mleft > 0){
         margin-left: $mleft + rem;
     }
+}
+
+@mixin no_padding(){
+    padding: none;
+}
+
+@mixin formatage_des_espaces(
+            $padding_unique,
+            $margin_unique, 
+            $padding_top,            
+            $padding_right,    
+            $padding_bottom,   
+            $padding_left,
+            $margin_top,
+            $margin_right,
+            $margin_bottom,
+            $margin_left){
+    /*
+        ========================================================================
+            Formatage des balises en (padding & margin)
+                RESPECT d'un ordre spécifique au niveau du traitement !
+    
+                $padding_unique         : besoin d'un padding ("yes" or "no")
+                                        : "oui" (un padding doit s'appliquer)
+                                        : "non" (aucun padding ne s'appliquer)
+                $margin_unique          : besoin d'un margin ("oui" ou "non")
+                                        : "oui" (un margin doit s'appliquer)
+                                        : "non" (aucun margin ne s'appliquer)
+                $padding_top            : nombre indiqué = padding haut
+                                        : "non" (aucun padding haut ne sera définit)
+                $padding_right          : nombre indiqué = padding droite
+                                        : "non" (aucun padding droite ne sera définit)
+                $padding_bottom         : nombre indiqué = padding bas
+                                        : "non" (aucun padding bas ne sera définit)
+                $padding_left           : nombre indiqué = padding gauche
+                                        : "non" (aucun padding gauche ne sera définit)
+                $margin_top             : nombre indiqué = margin haut
+                                        : "non" (aucun margin haut ne sera définit)
+                $margin_right           : nombre indiqué = margin droite
+                                        : "non" (aucun margin droite ne sera définit)
+                $margin_bottom          : nombre indiqué = margin bas
+                                        : "non" (aucun margin bas ne sera définit)
+                $margin_left            : nombre indiqué = margin gauche
+                                        : "non" (aucun margin gauche ne sera définit)
+  
+        ========================================================================
+    */
+    
+    @if ($padding_unique == "no"){
+        // application padding spécifique sur chaque côté
+        @if ($padding_top == "no"){
+            // rien faire
+        }@else{
+            // padding-top contiend une valeur
+            padding-top: $padding_top + rem!important;
+        }
+        @if ($padding_right == "no"){
+            // rien faire
+        }@else{
+            // padding-right contiend une valeur
+            padding-right: $padding_right + rem!important;
+        }
+        @if ($padding_bottom == "no"){
+            // rien faire
+        }@else{
+            // padding-bottom contiend une valeur
+            padding-bottom: $padding_bottom + rem!important;
+        }
+        @if ($padding_left == "no"){
+            // rien faire
+        }@else{
+            // padding-left contiend une valeur
+            padding-left: $padding_left + rem!important;
+        }
+    }@else{
+        // application padding unique
+        padding: $padding_unique + rem!important;
+    }
+    @if ($margin_unique == "no"){
+        // application padding spécifique sur chaque côté
+        @if ($margin_top == "no"){
+            // rien faire
+        }@else{
+            // margin-top contiend une valeur
+            margin-top: $margin_top + rem!important;
+        }
+        @if ($margin_right == "no"){
+            // rien faire
+        }@else{
+            // margin-right contiend une valeur
+            margin-right: $margin_right + rem!important;
+        }
+        @if ($margin_bottom == "no"){
+            // rien faire
+        }@else{
+            // margin-bottom contiend une valeur
+            margin-bottom: $margin_bottom + rem!important;
+        }
+        @if ($margin_left == "no"){
+            // rien faire
+        }@else{
+            // margin-left contiend une valeur
+            margin-left: $margin_left + rem!important;
+        }
+    }@else{
+        // application margin unique
+        margin: $margin_unique + rem!important;
+    }    
 }
 
 @mixin borderview (){
@@ -217,9 +330,13 @@ $bordercolorright,$bordercolorbottom,$bordercolorleft) {
 
 
 
-/* =============================================================================
-            Vue SMARTPHONE
-============================================================================= */
+/*
+================================================================================
+================================================================================
+            SMARTPHONE
+================================================================================
+================================================================================
+*/
 
 * {
     box-sizing: border-box;
@@ -228,9 +345,26 @@ $bordercolorright,$bordercolorbottom,$bordercolorleft) {
 html {
     body {
         @include espace_haut();
+        
+        /*  
+            ====================================================================
+                Smartphone - détail
+            ====================================================================
+        */
+        .sm_zonedeploiementdetail{
+            display: flex;
+            flex-wrap: wrap;
+            flex-basis: calc(100%);
+            @include formatage_des_espaces("no","no","no","no","no","no",1,"no",1,"no");            
+            .sm_detailgauche,.sm_detaildroit{
+                flex-basis: calc(100%);
+            }
+            .sm_detaildroit{
+                @include formatage_des_espaces("no","no","no","no","no","no",1,"no","no","no");
+            }
+        }
     }
 }
-
 
 body, .container, .sous-container {
     margin: 0rem;
@@ -245,8 +379,7 @@ body, .container, .sous-container {
             background-size: contain;
             background-repeat: no-repeat;
             line-height: 3rem;
-            margin-right: 1rem;
-
+            @include formatage_des_espaces("no","no","no","no","no","no","no",1,"no","no");
             a {
                 // consigne : logo cliquable ramenant à la page d'accueil'
                 text-decoration: none;
@@ -257,7 +390,7 @@ body, .container, .sous-container {
     [class$="titre-bouton"]{
         text-align: center;
         margin:auto;
-        justify-content: space-arround;
+        justify-content: space-around;
         form {
             input {
                 @include format_paddingmargin(0.5,0,0.5,0.5,0,0,0,0);
@@ -278,16 +411,24 @@ body, .container, .sous-container {
         }
     }
 
-    // Développer initialement en mode computer : héritage fonctionnel - convient à un positiionnement mobile First
+    /*
+    ============================================================================
+        Ci-dessous : bloc développé en mode (computer) puis basculé en 
+            mobileFirst ensuite.
+    ============================================================================
+    */
     [class*="menu_"]{
         @include formatage_menu();
-
         a {
             @include nodecoration_andcolor($color_menu);
         }
     }
-
-    // Développer initialement en mode computer : héritage fonctionnel - convient à un positiionnement mobile First
+    /*
+    ============================================================================
+        Ci-dessous : bloc développé en mode (computer) puis basculé en 
+            mobileFirst ensuite.
+    ============================================================================
+    */
     #zone-ici{
         @include formatage_ariane ();
         span {
@@ -442,9 +583,15 @@ body, .container, .sous-container {
     flex-basis: calc(100% / 12 * 2);
 }
 
-.detail_ln4sm_02,.detail_ln4sm_03,.detail_ln4sm_04,.detail_ln4sm_05 {
+.detail_ln4sm_02,.detail_ln4sm_03,.detail_ln4sm_04,.detail_ln4sm_05{
     flex-basis: calc(100% / 12 * 3);
 }
+
+#detail_bombay_img2,#detail_bombay_img3,#detail_bombay_img4,#detail_bombay_img5,
+#detail_peakyblue_img2,#detail_peakyblue_img3,#detail_peakyblue_img4,#detail_peakyblue_img5{
+    flex-basis: calc(100% / 12 * 3 - 0.5rem);
+}
+
 
 .ligne_partie_gauche, .ligne_partie_droite{
     flex-basis: calc(100% / 12 * 6);
@@ -452,6 +599,13 @@ body, .container, .sous-container {
 
 .partsall_ln1sm_03{
     flex-basis: calc(100% / 12 * 8);
+}
+
+.gauche_un{
+    display: none!important;
+}
+.gauche_quatre{
+    flex-basis: calc(100%);
 }
 
 .partsall_ln1sm_01,
@@ -470,7 +624,10 @@ body, .container, .sous-container {
 .contact_contactez, #form-contact, .contact_gauche, .contact_droit,
 #zone_infocontact, #infocontact_info,#infocontact_contact,
 #contenu_gauche, #contenu_droit,
-#info_titre,#info_contenu,#contact_titre,#contact_contenu{
+#info_titre,#info_contenu,#contact_titre,#contact_contenu,
+#zone_deploiment_detail,
+#deploiement_detail_gauche,#deploiement_detail_droit,
+#detail_bombay_img1,#detail_peakyblue_img1{
     flex-basis: calc(100% / 12 * 12);
 }
 
@@ -721,6 +878,12 @@ body, .container, .sous-container {
             margin-top: 0!important;
         }
         
+        .urlarticle{
+            // Ajout permettant que toute l'image soit un lien
+            flex-basis: calc(100% / 12 * 12);
+            @include url_nodecoration($color_b);
+        }
+        
         .article-souscontainer_sm{
             @include border_articlesmartphone();
             padding-right: 2rem;
@@ -756,6 +919,128 @@ body, .container, .sous-container {
                 }
             }
         }
+        
+        .chaise_bombay{
+            
+        }
+    }
+}
+
+#zone-deploiement-detail{
+    //@include borderview;
+    @include formatage_des_espaces("no","no","no","no","no","no",1,"no",1,"no");
+    
+    flex-direction: column-reverse;
+    
+    #deploiement_detail_gauche{
+        
+        display: flex;
+        justify-content:  space-between;
+        
+        
+        .gauche_un,.gauche_quatre{
+            //@include borderview();
+            display: flex;
+        }
+        
+        .gauche_un {
+            #detail_bombay_img1,#detail_peakyblue_img1{
+                background-repeat: no-repeat;
+                background-size: contain;
+                height: 4rem;
+            }
+            
+            #detail_bombay_img1{
+                background-image: url("../img/content/small100-CHR-59-01.jpg");                
+            }
+            #detail_peakyblue_img1{
+                background-image: url("../img/content/small-CHR-peakyblue1.jpg");
+            }
+            
+        }
+        .gauche_quatre{            
+            justify-content: space-between;                      
+            
+            [id*="detail_bombay_img"],[id*="detail_peakyblue_img"]{
+                //@include borderview();
+                background-repeat: no-repeat;
+                background-size: contain;
+                height: 4rem;
+            }
+            #detail_bombay_img2{
+                background-image: url("../img/content/small100-CHR-59-01.jpg");
+            }
+            #detail_bombay_img3{
+                background-image: url("../img/content/small100-CHR-59-02.jpg");
+            }
+            #detail_bombay_img4{
+                background-image: url("../img/content/small100-CHR-59-03.jpg");
+            }
+            #detail_bombay_img5{
+                background-image: url("../img/content/small100-CHR-59-04.jpg");
+            }
+            #detail_peakyblue_img2{
+                background-image: url("../img/content/small-CHR-peakyblue2.jpg");
+            }
+            #detail_peakyblue_img3{
+                background-image: url("../img/content/small-CHR-peakyblue3.jpg");
+            }
+            #detail_peakyblue_img4{
+                background-image: url("../img/content/small-CHR-peakyblue4.jpg");
+            }
+            #detail_peakyblue_img5{
+                background-image: url("../img/content/small-CHR-peakyblue5.jpg");
+            }
+            
+            
+            
+            
+        }
+        
+    }
+    #deploiement_detail_droit{
+        @include formatage_des_espaces("no","no","no","no","no","no",1,"no","no","no");
+        h1{
+            font-size: 2rem; 
+            font-weight: normal!important;
+            @include formatage_des_espaces("no","no","no",0.5,"no",0.5,0,"no",-0.5,"no");
+        }
+        h2{
+            font-size: 1.5rem; 
+            color: $color_contactdarkblue;
+            @include formatage_des_espaces("no","no","no",0.5,"no",0.5,"no","no","no","no");         
+        }
+        p{
+            @include formatage_des_espaces("no","no","no",0.5,"no",0.5,"no","no","no","no");
+        }
+        .detail_prix{
+            background-color: $color_ariane;
+            width: 50%;
+            text-align: right;
+            color: $color_w;
+            @include formatage_des_espaces("no","no",0.2,0.2,0.2,"no","no",0.5,"no",0.5);
+        }
+        ul{
+            list-style-type: none;
+            @include formatage_des_espaces("no","no","no","no","no",0,"no","no","no","no");
+            li:first-child{
+                text-transform: uppercase;
+                font-size: 0.8rem;                
+            }
+            li::first-letter{
+                font-size: 1.2rem;
+                text-transform: uppercase;
+            }
+            li {
+                font-weight: bold;
+                
+                @include formatage_des_espaces("no","no","no","no","no",0.5,"no","no","no","no");
+                span {
+                    font-weight: normal;
+                }
+            }
+        }
+        
     }
 }
 
@@ -765,6 +1050,58 @@ body, .container, .sous-container {
             Vue TABLETTE
 ============================================================================= */
 @media only screen and (min-width: fn_pxtorem($rupture_md)){
+    
+    [class*="sm"], .partsall_ln1md_04 {
+        flex-basis: calc(100% / 12 *  0);
+    }
+    
+    #zone-deploiement-detail{
+        
+        flex-direction: row;
+        justify-content: space-between;
+        
+        #deploiement_detail_gauche,#deploiement_detail_droit{
+            //@include borderview();
+        }
+        
+        #deploiement_detail_gauche{            
+            
+            .gauche_un{
+                #detail_bombay_img1,#detail_peakyblue_img1{
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    background-position: center;
+                    height: 25rem;
+                }
+                #detail_bombay_img1{
+                    background-image: url("../img/content/big-CHR-59-01.jpg");
+                }
+                #detail_peakyblue_img1{
+                    background-image: url("../img/content/big-CHR-peakyblue1.jpg");
+                }
+            }
+            .gauche_quatre{
+                flex-direction: column;
+                
+                [id*="detail_bombay_img"]:first-child,[id*="detail_peakyblue_img"]:first-child{
+                    margin-top: 0rem!important;
+                }
+                
+                [id*="detail_bombay_img"],[id*="detail_peakyblue_img"]{
+                    @include formatage_des_espaces("no","no","no","no","no","no",1,"no","no","no");
+                    background-repeat: no-repeat;
+                    background-size:  contain;
+                    background-position: center;
+                }
+                
+                
+            }
+        }
+        #deploiement_detail_droit{
+            @include formatage_des_espaces("no","no","no","no","no","no",0,"no","no",0);            
+        }
+    }
+        
     
     .isl_google{
         border: none!important;
@@ -783,9 +1120,7 @@ body, .container, .sous-container {
         flex-direction: row;
     }
 
-    [class*="sm"], .partsall_ln1md_04 {
-        flex-basis: calc(100% / 12 *  0);
-    }
+    
 
     .gauche_four {
         flex-basis: calc(100% / 12 *  2);
@@ -799,6 +1134,12 @@ body, .container, .sous-container {
     .deploiement-menu{
         flex-basis: calc(100% / 12 *  3);
     }
+    
+    .gauche_quatre{
+        flex-basis: calc(100% / 12 *  3 - 0.5rem);
+    }
+    
+    
 
     .index_ln5md_02,.index_ln5md_03,.index_ln5md_04{
         flex-basis: calc(100% / 12 *  4 - 1rem)!important;
@@ -820,6 +1161,10 @@ body, .container, .sous-container {
     #zone-info, #zone-contact{
         flex-basis: calc(100% / 12 *  6);
     }    
+    
+    #deploiement_detail_gauche,#deploiement_detail_droit{
+        flex-basis: calc(100% / 12 *  6 - 0.5rem);
+    }
 
     #contenu_gauche,#contenu_droit{
         flex-basis: calc(100% / 12 *  6 - 0.10rem);        
@@ -836,6 +1181,11 @@ body, .container, .sous-container {
 
     .deploiement-article_md{
         flex-basis: calc(100% / 12 *  9);
+    }
+    
+    .gauche_un{
+        flex-basis: calc(100% / 12 *  9 - 0.5rem);
+        display: block!important;
     }
 
 
@@ -854,7 +1204,8 @@ body, .container, .sous-container {
     .catalogue_ln4sm_01, .catalogue_ln4md_01, .catalogue_ln4md_02, .catalogue_ln4md_03, .catalogue_ln4md_04,
     .detail_ln4md_01, .detail_ln4md_02, .detail_ln4md_03, .detail_ln4md_04, .detail_ln4md_05,
     #zone_infocontact,
-    #info_titre,#info_contenu,#contact_titre,#contact_contenu{
+    #info_titre,#info_contenu,#contact_titre,#contact_contenu,
+    #detail_bombay_img1,#detail_peakyblue_img1{
         flex-basis: calc(100% / 12 *  12);
     }
 
@@ -869,10 +1220,10 @@ body, .container, .sous-container {
     .contact_ln4md_01,
     #pub-col1,
     .catalogue_ln4md_01,.index_ln5md_02,.index_ln5md_03,.index_ln5md_04,
-    #contenu_droit, .sous_menu{
+    #contenu_droit, .sous_menu, {
         display: block;
     }
-
+    
     #pub-col1, .article-souscontainer_md {
         display: flex;
         flex-wrap: wrap;
@@ -1011,7 +1362,7 @@ body, .container, .sous-container {
                     
                 }
                 #contenu_droit{
-                    flex-basis: calc(100% / 12 * 6 - 0.5 rem);
+                    flex-basis: calc(100% / 12 * 6 - 0.5rem);
                     padding-right: 1rem;
                     padding-bottom: 1rem;
                     
@@ -1050,6 +1401,13 @@ body, .container, .sous-container {
         .deploiement-article_md{
             display: block; 
             margin-top: 1rem;
+            
+            .urlarticle {
+                // Bug : A un moment donné : les blocs se chevauchent
+                // Disfonctionnement apparut au moment d'ajouter le a href
+                @include url_nodecoration($color_b);
+            }
+            
             .article-souscontainer_md:first-child{
                 border: fn_pxtorem(1) solid grey!important;
             }
@@ -1121,15 +1479,7 @@ body, .container, .sous-container {
                 }
             }
         }
-    }
-    
-    
-    
-    
-    /* ************************************************************************* */
-    
-    
-    
+    }    
 }
 
 .isl_google {
@@ -1142,10 +1492,45 @@ body, .container, .sous-container {
 /* =============================================================================
             Vue ORDINATEUR
 ============================================================================= */
-@media only screen and (min-width: fn_pxtorem($rupture_xl)){
+@media only screen and (min-width: fn_pxtorem($rupture_xl)){    
+    
+ #zone-deploiement-detail{
+    width: fn_pxtorem(1024);
+    @include autocentrage();
+    
+    #deploiement_detail_gauche{        
+        flex-direction: column;
+        
+        .gauche_un {
+            #detail_bombay_img1,#detail_peakyblue_img1{
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center;
+                height: 25rem;
+            }
+            
+            #detail_bombay_img1{
+                background-image: url("../img/content/big-CHR-59-02.jpg");                
+                }
+            #detail_peakyblue_img1{
+                    background-image: url("../img/content/big-CHR-peakyblue1.jpg");
+                }
+            
+        }
+        .gauche_quatre{
+            @include formatage_des_espaces("no","no","no","no","no","no",1,"no","no",0);
+            flex-direction: row;
+            
+            [id*="detail_bombay_img"]:nth-child(n+2),[id*="detail_peakyblue_img"]:nth-child(n+2){
+                    @include formatage_des_espaces("no","no","no","no","no","no",0,"no","no","no");
+                }
+        }
+        
+    }
+}
 
     .container {
-        width: 1024px;
+        width: fn_pxtorem(1024);
         @include autocentrage ();
     }
 
@@ -1181,20 +1566,26 @@ body, .container, .sous-container {
     .contact_ln6xl_03{
         flex-basis: calc(100% / 12 *  6);
     }
+    
+    #deploiement_detail_gauche,#deploiement_detail_droit{
+        flex-basis: calc(100% / 12 *  6 - 0.5rem);
+    }
 
     .deploiement-article_xl,
     .deploiement_droite{
         flex-basis: calc(100% / 12 *  9);        
     }
     
+    /*
     .nno {
         display: flex!important;
         width: 100%;
-        flex-wrap: wrap!important;
-        flex-basis: calc(100% / 12 *  9);
+        //flex-wrap: wrap!important;
+        flex-basis: calc(100% / 12 *  9)!important;
         background-color: transparent;
-        justify-content: space-between;
+        //justify-content: space-between;
     }
+    */
 
     .partsici_ln3xl_01,
     .contact_ln4xl_01,
@@ -1204,7 +1595,9 @@ body, .container, .sous-container {
     .catalogue_ln4xl_01,.catalogue_ln4xl_02,.catalogue_ln4xl_03,.catalogue_ln4xl_04,
     .gauche_one, .gauche_four,
     .detail_ln4xl_01,
-    #zone-deploiement {
+    #zone-deploiement,
+    .gauche_un,.gauche_quatre,
+    #detail_bombay_img1,#detail_peakyblue_img1{
         flex-basis: calc(100% / 12 *  12);
     }
 
@@ -1241,12 +1634,23 @@ body, .container, .sous-container {
         
               
         .nno{
-            .nne:nth-of-type(3n+1){
-                margin-left: 0rem;
+            
+            display: flex!important;
+            flex-wrap: wrap;
+            flex-basis: calc(100% / 12 *  9)!important;
+            margin-top: 1!important;
+            //justify-content: space-between!important;
+            
+            .urlarticle {
+                flex-basis: calc(100% / 12 * 4 - 0.5rem);
+                @include url_nodecoration($color_b);
             }
-            .nne:last-child{
-                margin-right: calc(100% / 12 * 4 + 0.25rem);
-            }
+            
+            .urlarticle:nth-of-type(3n+2){
+                margin-right: calc((0.5rem * 3) / 2)!important;
+                margin-left: calc((0.5rem * 3) / 2)!important;
+            }            
+            
             .nne {
                 background-color: transparent;
                 flex-basis: calc(100% / 12 * 4 - 0.5rem);
@@ -1255,9 +1659,9 @@ body, .container, .sous-container {
                 margin: 0rem; 
                 margin-bottom: 1rem;
                 
-                .souscontainer-gauche{
-                    
+                .souscontainer-gauche{                    
                 }
+                
                 .souscontainer-droite{
                     margin: 0rem!important;
                     padding-left: 0.5rem;
@@ -1275,8 +1679,9 @@ body, .container, .sous-container {
                         margin-top: 2.3rem;
                         background-color: $color_w;
                     }
-                }                
+                }   
             } 
+
             .nne:hover{  
                 box-shadow: 1px 1px 12px grey;
                 .souscontainer-droite{

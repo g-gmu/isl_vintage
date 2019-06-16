@@ -5,18 +5,109 @@
 */
 /* --- Technique sp├®cialement d├®velopp├®e sur mes connaissances en codage pour
    optimiser la construction des pages --- */
-/* =============================================================================
-            Vue SMARTPHONE
-============================================================================= */
+/*
+================================================================================
+================================================================================
+            SMARTPHONE
+================================================================================
+================================================================================
+*/
 * {
   box-sizing: border-box; }
 
 html body {
-  margin-top: 1rem; }
+  margin-top: 1rem;
+  /*  
+      ====================================================================
+          Smartphone - d├®tail
+      ====================================================================
+  */ }
+  html body .sm_zonedeploiementdetail {
+    display: flex;
+    flex-wrap: wrap;
+    flex-basis: calc(100%);
+  /*
+      ========================================================================
+          Formatage des balises en (padding & margin)
+              RESPECT d'un ordre sp├®cifique au niveau du traitement !
+  
+              $padding_unique         : besoin d'un padding ("yes" or "no")
+                                      : "oui" (un padding doit s'appliquer)
+                                      : "non" (aucun padding ne s'appliquer)
+              $margin_unique          : besoin d'un margin ("oui" ou "non")
+                                      : "oui" (un margin doit s'appliquer)
+                                      : "non" (aucun margin ne s'appliquer)
+              $padding_top            : nombre indiqu├® = padding haut
+                                      : "non" (aucun padding haut ne sera d├®finit)
+              $padding_right          : nombre indiqu├® = padding droite
+                                      : "non" (aucun padding droite ne sera d├®finit)
+              $padding_bottom         : nombre indiqu├® = padding bas
+                                      : "non" (aucun padding bas ne sera d├®finit)
+              $padding_left           : nombre indiqu├® = padding gauche
+                                      : "non" (aucun padding gauche ne sera d├®finit)
+              $margin_top             : nombre indiqu├® = margin haut
+                                      : "non" (aucun margin haut ne sera d├®finit)
+              $margin_right           : nombre indiqu├® = margin droite
+                                      : "non" (aucun margin droite ne sera d├®finit)
+              $margin_bottom          : nombre indiqu├® = margin bas
+                                      : "non" (aucun margin bas ne sera d├®finit)
+              $margin_left            : nombre indiqu├® = margin gauche
+                                      : "non" (aucun margin gauche ne sera d├®finit)
+
+      ========================================================================
+  */
+    margin-top: 1rem !important;
+    margin-bottom: 1rem !important; }
+    html body .sm_zonedeploiementdetail .sm_detailgauche, html body .sm_zonedeploiementdetail .sm_detaildroit {
+      flex-basis: calc(100%); }
+    html body .sm_zonedeploiementdetail .sm_detaildroit {
+    /*
+        ========================================================================
+            Formatage des balises en (padding & margin)
+                RESPECT d'un ordre sp├®cifique au niveau du traitement !
+    
+                $padding_unique         : besoin d'un padding ("yes" or "no")
+                                        : "oui" (un padding doit s'appliquer)
+                                        : "non" (aucun padding ne s'appliquer)
+                $margin_unique          : besoin d'un margin ("oui" ou "non")
+                                        : "oui" (un margin doit s'appliquer)
+                                        : "non" (aucun margin ne s'appliquer)
+                $padding_top            : nombre indiqu├® = padding haut
+                                        : "non" (aucun padding haut ne sera d├®finit)
+                $padding_right          : nombre indiqu├® = padding droite
+                                        : "non" (aucun padding droite ne sera d├®finit)
+                $padding_bottom         : nombre indiqu├® = padding bas
+                                        : "non" (aucun padding bas ne sera d├®finit)
+                $padding_left           : nombre indiqu├® = padding gauche
+                                        : "non" (aucun padding gauche ne sera d├®finit)
+                $margin_top             : nombre indiqu├® = margin haut
+                                        : "non" (aucun margin haut ne sera d├®finit)
+                $margin_right           : nombre indiqu├® = margin droite
+                                        : "non" (aucun margin droite ne sera d├®finit)
+                $margin_bottom          : nombre indiqu├® = margin bas
+                                        : "non" (aucun margin bas ne sera d├®finit)
+                $margin_left            : nombre indiqu├® = margin gauche
+                                        : "non" (aucun margin gauche ne sera d├®finit)
+  
+        ========================================================================
+    */
+      margin-top: 1rem !important; }
 
 body, .container, .sous-container {
   margin: 0rem;
-  width: 100%; }
+  width: 100%;
+  /*
+  ============================================================================
+      Ci-dessous : bloc d├®velopp├® en mode (computer) puis bascul├® en 
+          mobileFirst ensuite.
+  ============================================================================
+  */
+  /*
+  ============================================================================
+      Ci-dessous : bloc d├®velopp├® en mode (computer) puis bascul├® en 
+          mobileFirst ensuite.
+  ============================================================================
+  */ }
   body [class$="titre-imagetitre"], .container [class$="titre-imagetitre"], .sous-container [class$="titre-imagetitre"] {
     font-family: 'Open Sans';
     display: flex;
@@ -28,13 +119,43 @@ body, .container, .sous-container {
       background-size: contain;
       background-repeat: no-repeat;
       line-height: 3rem;
-      margin-right: 1rem; }
+    /*
+        ========================================================================
+            Formatage des balises en (padding & margin)
+                RESPECT d'un ordre sp├®cifique au niveau du traitement !
+    
+                $padding_unique         : besoin d'un padding ("yes" or "no")
+                                        : "oui" (un padding doit s'appliquer)
+                                        : "non" (aucun padding ne s'appliquer)
+                $margin_unique          : besoin d'un margin ("oui" ou "non")
+                                        : "oui" (un margin doit s'appliquer)
+                                        : "non" (aucun margin ne s'appliquer)
+                $padding_top            : nombre indiqu├® = padding haut
+                                        : "non" (aucun padding haut ne sera d├®finit)
+                $padding_right          : nombre indiqu├® = padding droite
+                                        : "non" (aucun padding droite ne sera d├®finit)
+                $padding_bottom         : nombre indiqu├® = padding bas
+                                        : "non" (aucun padding bas ne sera d├®finit)
+                $padding_left           : nombre indiqu├® = padding gauche
+                                        : "non" (aucun padding gauche ne sera d├®finit)
+                $margin_top             : nombre indiqu├® = margin haut
+                                        : "non" (aucun margin haut ne sera d├®finit)
+                $margin_right           : nombre indiqu├® = margin droite
+                                        : "non" (aucun margin droite ne sera d├®finit)
+                $margin_bottom          : nombre indiqu├® = margin bas
+                                        : "non" (aucun margin bas ne sera d├®finit)
+                $margin_left            : nombre indiqu├® = margin gauche
+                                        : "non" (aucun margin gauche ne sera d├®finit)
+  
+        ========================================================================
+    */
+      margin-right: 1rem !important; }
       body [class$="titre-imagetitre"] div:first-child a, .container [class$="titre-imagetitre"] div:first-child a, .sous-container [class$="titre-imagetitre"] div:first-child a {
         text-decoration: none; }
   body [class$="titre-bouton"], .container [class$="titre-bouton"], .sous-container [class$="titre-bouton"] {
     text-align: center;
     margin: auto;
-    justify-content: space-arround; }
+    justify-content: space-around; }
     body [class$="titre-bouton"] form input, .container [class$="titre-bouton"] form input, .sous-container [class$="titre-bouton"] form input {
       padding-top: 0.5rem;
       padding-bottom: 0.5rem;
@@ -198,11 +319,21 @@ body, .container, .sous-container {
 .detail_ln4sm_02, .detail_ln4sm_03, .detail_ln4sm_04, .detail_ln4sm_05 {
   flex-basis: calc(100% / 12 * 3); }
 
+#detail_bombay_img2, #detail_bombay_img3, #detail_bombay_img4, #detail_bombay_img5,
+#detail_peakyblue_img2, #detail_peakyblue_img3, #detail_peakyblue_img4, #detail_peakyblue_img5 {
+  flex-basis: calc(100% / 12 * 3 - 0.5rem); }
+
 .ligne_partie_gauche, .ligne_partie_droite {
   flex-basis: calc(100% / 12 * 6); }
 
 .partsall_ln1sm_03 {
   flex-basis: calc(100% / 12 * 8); }
+
+.gauche_un {
+  display: none !important; }
+
+.gauche_quatre {
+  flex-basis: calc(100%); }
 
 .partsall_ln1sm_01,
 .partsall_ln2sm_01, .partsall_ln2sm_02, .partsall_ln2sm_03, .partsall_ln2sm_04, .partsall_ln2sm_05,
@@ -220,7 +351,10 @@ body, .container, .sous-container {
 .contact_contactez, #form-contact, .contact_gauche, .contact_droit,
 #zone_infocontact, #infocontact_info, #infocontact_contact,
 #contenu_gauche, #contenu_droit,
-#info_titre, #info_contenu, #contact_titre, #contact_contenu {
+#info_titre, #info_contenu, #contact_titre, #contact_contenu,
+#zone_deploiment_detail,
+#deploiement_detail_gauche, #deploiement_detail_droit,
+#detail_bombay_img1, #detail_peakyblue_img1 {
   flex-basis: calc(100% / 12 * 12); }
 
 .deploiement_gauche, .deploiement_droite {
@@ -421,6 +555,10 @@ body, .container, .sous-container {
     border-bottom: 0.0625rem solid grey;
     border-right: none !important;
     margin-top: 0 !important; }
+  #zone-deploiement .deploiement-article_sm .urlarticle {
+    flex-basis: calc(100% / 12 * 12);
+    text-decoration: none;
+    color: black; }
   #zone-deploiement .deploiement-article_sm .article-souscontainer_sm {
     border-top: 0.0625rem solid grey;
     border-left: none !important;
@@ -451,10 +589,419 @@ body, .container, .sous-container {
       padding-right: 0.1rem;
       margin-bottom: 1.5rem; }
 
+#zone-deploiement-detail {
+  /*
+      ========================================================================
+          Formatage des balises en (padding & margin)
+              RESPECT d'un ordre sp├®cifique au niveau du traitement !
+  
+              $padding_unique         : besoin d'un padding ("yes" or "no")
+                                      : "oui" (un padding doit s'appliquer)
+                                      : "non" (aucun padding ne s'appliquer)
+              $margin_unique          : besoin d'un margin ("oui" ou "non")
+                                      : "oui" (un margin doit s'appliquer)
+                                      : "non" (aucun margin ne s'appliquer)
+              $padding_top            : nombre indiqu├® = padding haut
+                                      : "non" (aucun padding haut ne sera d├®finit)
+              $padding_right          : nombre indiqu├® = padding droite
+                                      : "non" (aucun padding droite ne sera d├®finit)
+              $padding_bottom         : nombre indiqu├® = padding bas
+                                      : "non" (aucun padding bas ne sera d├®finit)
+              $padding_left           : nombre indiqu├® = padding gauche
+                                      : "non" (aucun padding gauche ne sera d├®finit)
+              $margin_top             : nombre indiqu├® = margin haut
+                                      : "non" (aucun margin haut ne sera d├®finit)
+              $margin_right           : nombre indiqu├® = margin droite
+                                      : "non" (aucun margin droite ne sera d├®finit)
+              $margin_bottom          : nombre indiqu├® = margin bas
+                                      : "non" (aucun margin bas ne sera d├®finit)
+              $margin_left            : nombre indiqu├® = margin gauche
+                                      : "non" (aucun margin gauche ne sera d├®finit)
+
+      ========================================================================
+  */
+  margin-top: 1rem !important;
+  margin-bottom: 1rem !important;
+  flex-direction: column-reverse; }
+  #zone-deploiement-detail #deploiement_detail_gauche {
+    display: flex;
+    justify-content: space-between; }
+    #zone-deploiement-detail #deploiement_detail_gauche .gauche_un, #zone-deploiement-detail #deploiement_detail_gauche .gauche_quatre {
+      display: flex; }
+    #zone-deploiement-detail #deploiement_detail_gauche .gauche_un #detail_bombay_img1, #zone-deploiement-detail #deploiement_detail_gauche .gauche_un #detail_peakyblue_img1 {
+      background-repeat: no-repeat;
+      background-size: contain;
+      height: 4rem; }
+    #zone-deploiement-detail #deploiement_detail_gauche .gauche_un #detail_bombay_img1 {
+      background-image: url("../img/content/small100-CHR-59-01.jpg"); }
+    #zone-deploiement-detail #deploiement_detail_gauche .gauche_un #detail_peakyblue_img1 {
+      background-image: url("../img/content/small-CHR-peakyblue1.jpg"); }
+    #zone-deploiement-detail #deploiement_detail_gauche .gauche_quatre {
+      justify-content: space-between; }
+      #zone-deploiement-detail #deploiement_detail_gauche .gauche_quatre [id*="detail_bombay_img"], #zone-deploiement-detail #deploiement_detail_gauche .gauche_quatre [id*="detail_peakyblue_img"] {
+        background-repeat: no-repeat;
+        background-size: contain;
+        height: 4rem; }
+      #zone-deploiement-detail #deploiement_detail_gauche .gauche_quatre #detail_bombay_img2 {
+        background-image: url("../img/content/small100-CHR-59-01.jpg"); }
+      #zone-deploiement-detail #deploiement_detail_gauche .gauche_quatre #detail_bombay_img3 {
+        background-image: url("../img/content/small100-CHR-59-02.jpg"); }
+      #zone-deploiement-detail #deploiement_detail_gauche .gauche_quatre #detail_bombay_img4 {
+        background-image: url("../img/content/small100-CHR-59-03.jpg"); }
+      #zone-deploiement-detail #deploiement_detail_gauche .gauche_quatre #detail_bombay_img5 {
+        background-image: url("../img/content/small100-CHR-59-04.jpg"); }
+      #zone-deploiement-detail #deploiement_detail_gauche .gauche_quatre #detail_peakyblue_img2 {
+        background-image: url("../img/content/small-CHR-peakyblue2.jpg"); }
+      #zone-deploiement-detail #deploiement_detail_gauche .gauche_quatre #detail_peakyblue_img3 {
+        background-image: url("../img/content/small-CHR-peakyblue3.jpg"); }
+      #zone-deploiement-detail #deploiement_detail_gauche .gauche_quatre #detail_peakyblue_img4 {
+        background-image: url("../img/content/small-CHR-peakyblue4.jpg"); }
+      #zone-deploiement-detail #deploiement_detail_gauche .gauche_quatre #detail_peakyblue_img5 {
+        background-image: url("../img/content/small-CHR-peakyblue5.jpg"); }
+  #zone-deploiement-detail #deploiement_detail_droit {
+  /*
+      ========================================================================
+          Formatage des balises en (padding & margin)
+              RESPECT d'un ordre sp├®cifique au niveau du traitement !
+  
+              $padding_unique         : besoin d'un padding ("yes" or "no")
+                                      : "oui" (un padding doit s'appliquer)
+                                      : "non" (aucun padding ne s'appliquer)
+              $margin_unique          : besoin d'un margin ("oui" ou "non")
+                                      : "oui" (un margin doit s'appliquer)
+                                      : "non" (aucun margin ne s'appliquer)
+              $padding_top            : nombre indiqu├® = padding haut
+                                      : "non" (aucun padding haut ne sera d├®finit)
+              $padding_right          : nombre indiqu├® = padding droite
+                                      : "non" (aucun padding droite ne sera d├®finit)
+              $padding_bottom         : nombre indiqu├® = padding bas
+                                      : "non" (aucun padding bas ne sera d├®finit)
+              $padding_left           : nombre indiqu├® = padding gauche
+                                      : "non" (aucun padding gauche ne sera d├®finit)
+              $margin_top             : nombre indiqu├® = margin haut
+                                      : "non" (aucun margin haut ne sera d├®finit)
+              $margin_right           : nombre indiqu├® = margin droite
+                                      : "non" (aucun margin droite ne sera d├®finit)
+              $margin_bottom          : nombre indiqu├® = margin bas
+                                      : "non" (aucun margin bas ne sera d├®finit)
+              $margin_left            : nombre indiqu├® = margin gauche
+                                      : "non" (aucun margin gauche ne sera d├®finit)
+
+      ========================================================================
+  */
+    margin-top: 1rem !important; }
+    #zone-deploiement-detail #deploiement_detail_droit h1 {
+      font-size: 2rem;
+      font-weight: normal !important;
+    /*
+        ========================================================================
+            Formatage des balises en (padding & margin)
+                RESPECT d'un ordre sp├®cifique au niveau du traitement !
+    
+                $padding_unique         : besoin d'un padding ("yes" or "no")
+                                        : "oui" (un padding doit s'appliquer)
+                                        : "non" (aucun padding ne s'appliquer)
+                $margin_unique          : besoin d'un margin ("oui" ou "non")
+                                        : "oui" (un margin doit s'appliquer)
+                                        : "non" (aucun margin ne s'appliquer)
+                $padding_top            : nombre indiqu├® = padding haut
+                                        : "non" (aucun padding haut ne sera d├®finit)
+                $padding_right          : nombre indiqu├® = padding droite
+                                        : "non" (aucun padding droite ne sera d├®finit)
+                $padding_bottom         : nombre indiqu├® = padding bas
+                                        : "non" (aucun padding bas ne sera d├®finit)
+                $padding_left           : nombre indiqu├® = padding gauche
+                                        : "non" (aucun padding gauche ne sera d├®finit)
+                $margin_top             : nombre indiqu├® = margin haut
+                                        : "non" (aucun margin haut ne sera d├®finit)
+                $margin_right           : nombre indiqu├® = margin droite
+                                        : "non" (aucun margin droite ne sera d├®finit)
+                $margin_bottom          : nombre indiqu├® = margin bas
+                                        : "non" (aucun margin bas ne sera d├®finit)
+                $margin_left            : nombre indiqu├® = margin gauche
+                                        : "non" (aucun margin gauche ne sera d├®finit)
+  
+        ========================================================================
+    */
+      padding-right: 0.5rem !important;
+      padding-left: 0.5rem !important;
+      margin-top: 0rem !important;
+      margin-bottom: -0.5rem !important; }
+    #zone-deploiement-detail #deploiement_detail_droit h2 {
+      font-size: 1.5rem;
+      color: #A6D1E4;
+    /*
+        ========================================================================
+            Formatage des balises en (padding & margin)
+                RESPECT d'un ordre sp├®cifique au niveau du traitement !
+    
+                $padding_unique         : besoin d'un padding ("yes" or "no")
+                                        : "oui" (un padding doit s'appliquer)
+                                        : "non" (aucun padding ne s'appliquer)
+                $margin_unique          : besoin d'un margin ("oui" ou "non")
+                                        : "oui" (un margin doit s'appliquer)
+                                        : "non" (aucun margin ne s'appliquer)
+                $padding_top            : nombre indiqu├® = padding haut
+                                        : "non" (aucun padding haut ne sera d├®finit)
+                $padding_right          : nombre indiqu├® = padding droite
+                                        : "non" (aucun padding droite ne sera d├®finit)
+                $padding_bottom         : nombre indiqu├® = padding bas
+                                        : "non" (aucun padding bas ne sera d├®finit)
+                $padding_left           : nombre indiqu├® = padding gauche
+                                        : "non" (aucun padding gauche ne sera d├®finit)
+                $margin_top             : nombre indiqu├® = margin haut
+                                        : "non" (aucun margin haut ne sera d├®finit)
+                $margin_right           : nombre indiqu├® = margin droite
+                                        : "non" (aucun margin droite ne sera d├®finit)
+                $margin_bottom          : nombre indiqu├® = margin bas
+                                        : "non" (aucun margin bas ne sera d├®finit)
+                $margin_left            : nombre indiqu├® = margin gauche
+                                        : "non" (aucun margin gauche ne sera d├®finit)
+  
+        ========================================================================
+    */
+      padding-right: 0.5rem !important;
+      padding-left: 0.5rem !important; }
+    #zone-deploiement-detail #deploiement_detail_droit p {
+    /*
+        ========================================================================
+            Formatage des balises en (padding & margin)
+                RESPECT d'un ordre sp├®cifique au niveau du traitement !
+    
+                $padding_unique         : besoin d'un padding ("yes" or "no")
+                                        : "oui" (un padding doit s'appliquer)
+                                        : "non" (aucun padding ne s'appliquer)
+                $margin_unique          : besoin d'un margin ("oui" ou "non")
+                                        : "oui" (un margin doit s'appliquer)
+                                        : "non" (aucun margin ne s'appliquer)
+                $padding_top            : nombre indiqu├® = padding haut
+                                        : "non" (aucun padding haut ne sera d├®finit)
+                $padding_right          : nombre indiqu├® = padding droite
+                                        : "non" (aucun padding droite ne sera d├®finit)
+                $padding_bottom         : nombre indiqu├® = padding bas
+                                        : "non" (aucun padding bas ne sera d├®finit)
+                $padding_left           : nombre indiqu├® = padding gauche
+                                        : "non" (aucun padding gauche ne sera d├®finit)
+                $margin_top             : nombre indiqu├® = margin haut
+                                        : "non" (aucun margin haut ne sera d├®finit)
+                $margin_right           : nombre indiqu├® = margin droite
+                                        : "non" (aucun margin droite ne sera d├®finit)
+                $margin_bottom          : nombre indiqu├® = margin bas
+                                        : "non" (aucun margin bas ne sera d├®finit)
+                $margin_left            : nombre indiqu├® = margin gauche
+                                        : "non" (aucun margin gauche ne sera d├®finit)
+  
+        ========================================================================
+    */
+      padding-right: 0.5rem !important;
+      padding-left: 0.5rem !important; }
+    #zone-deploiement-detail #deploiement_detail_droit .detail_prix {
+      background-color: #A6D1E4;
+      width: 50%;
+      text-align: right;
+      color: white;
+    /*
+        ========================================================================
+            Formatage des balises en (padding & margin)
+                RESPECT d'un ordre sp├®cifique au niveau du traitement !
+    
+                $padding_unique         : besoin d'un padding ("yes" or "no")
+                                        : "oui" (un padding doit s'appliquer)
+                                        : "non" (aucun padding ne s'appliquer)
+                $margin_unique          : besoin d'un margin ("oui" ou "non")
+                                        : "oui" (un margin doit s'appliquer)
+                                        : "non" (aucun margin ne s'appliquer)
+                $padding_top            : nombre indiqu├® = padding haut
+                                        : "non" (aucun padding haut ne sera d├®finit)
+                $padding_right          : nombre indiqu├® = padding droite
+                                        : "non" (aucun padding droite ne sera d├®finit)
+                $padding_bottom         : nombre indiqu├® = padding bas
+                                        : "non" (aucun padding bas ne sera d├®finit)
+                $padding_left           : nombre indiqu├® = padding gauche
+                                        : "non" (aucun padding gauche ne sera d├®finit)
+                $margin_top             : nombre indiqu├® = margin haut
+                                        : "non" (aucun margin haut ne sera d├®finit)
+                $margin_right           : nombre indiqu├® = margin droite
+                                        : "non" (aucun margin droite ne sera d├®finit)
+                $margin_bottom          : nombre indiqu├® = margin bas
+                                        : "non" (aucun margin bas ne sera d├®finit)
+                $margin_left            : nombre indiqu├® = margin gauche
+                                        : "non" (aucun margin gauche ne sera d├®finit)
+  
+        ========================================================================
+    */
+      padding-top: 0.2rem !important;
+      padding-right: 0.2rem !important;
+      padding-bottom: 0.2rem !important;
+      margin-right: 0.5rem !important;
+      margin-left: 0.5rem !important; }
+    #zone-deploiement-detail #deploiement_detail_droit ul {
+      list-style-type: none;
+    /*
+        ========================================================================
+            Formatage des balises en (padding & margin)
+                RESPECT d'un ordre sp├®cifique au niveau du traitement !
+    
+                $padding_unique         : besoin d'un padding ("yes" or "no")
+                                        : "oui" (un padding doit s'appliquer)
+                                        : "non" (aucun padding ne s'appliquer)
+                $margin_unique          : besoin d'un margin ("oui" ou "non")
+                                        : "oui" (un margin doit s'appliquer)
+                                        : "non" (aucun margin ne s'appliquer)
+                $padding_top            : nombre indiqu├® = padding haut
+                                        : "non" (aucun padding haut ne sera d├®finit)
+                $padding_right          : nombre indiqu├® = padding droite
+                                        : "non" (aucun padding droite ne sera d├®finit)
+                $padding_bottom         : nombre indiqu├® = padding bas
+                                        : "non" (aucun padding bas ne sera d├®finit)
+                $padding_left           : nombre indiqu├® = padding gauche
+                                        : "non" (aucun padding gauche ne sera d├®finit)
+                $margin_top             : nombre indiqu├® = margin haut
+                                        : "non" (aucun margin haut ne sera d├®finit)
+                $margin_right           : nombre indiqu├® = margin droite
+                                        : "non" (aucun margin droite ne sera d├®finit)
+                $margin_bottom          : nombre indiqu├® = margin bas
+                                        : "non" (aucun margin bas ne sera d├®finit)
+                $margin_left            : nombre indiqu├® = margin gauche
+                                        : "non" (aucun margin gauche ne sera d├®finit)
+  
+        ========================================================================
+    */
+      padding-left: 0rem !important; }
+      #zone-deploiement-detail #deploiement_detail_droit ul li:first-child {
+        text-transform: uppercase;
+        font-size: 0.8rem; }
+      #zone-deploiement-detail #deploiement_detail_droit ul li::first-letter {
+        font-size: 1.2rem;
+        text-transform: uppercase; }
+      #zone-deploiement-detail #deploiement_detail_droit ul li {
+        font-weight: bold;
+      /*
+          ========================================================================
+              Formatage des balises en (padding & margin)
+                  RESPECT d'un ordre sp├®cifique au niveau du traitement !
+      
+                  $padding_unique         : besoin d'un padding ("yes" or "no")
+                                          : "oui" (un padding doit s'appliquer)
+                                          : "non" (aucun padding ne s'appliquer)
+                  $margin_unique          : besoin d'un margin ("oui" ou "non")
+                                          : "oui" (un margin doit s'appliquer)
+                                          : "non" (aucun margin ne s'appliquer)
+                  $padding_top            : nombre indiqu├® = padding haut
+                                          : "non" (aucun padding haut ne sera d├®finit)
+                  $padding_right          : nombre indiqu├® = padding droite
+                                          : "non" (aucun padding droite ne sera d├®finit)
+                  $padding_bottom         : nombre indiqu├® = padding bas
+                                          : "non" (aucun padding bas ne sera d├®finit)
+                  $padding_left           : nombre indiqu├® = padding gauche
+                                          : "non" (aucun padding gauche ne sera d├®finit)
+                  $margin_top             : nombre indiqu├® = margin haut
+                                          : "non" (aucun margin haut ne sera d├®finit)
+                  $margin_right           : nombre indiqu├® = margin droite
+                                          : "non" (aucun margin droite ne sera d├®finit)
+                  $margin_bottom          : nombre indiqu├® = margin bas
+                                          : "non" (aucun margin bas ne sera d├®finit)
+                  $margin_left            : nombre indiqu├® = margin gauche
+                                          : "non" (aucun margin gauche ne sera d├®finit)
+    
+          ========================================================================
+      */
+        padding-left: 0.5rem !important; }
+        #zone-deploiement-detail #deploiement_detail_droit ul li span {
+          font-weight: normal; }
+
 /* =============================================================================
             Vue TABLETTE
 ============================================================================= */
 @media only screen and (min-width: 25rem) {
+  [class*="sm"], .partsall_ln1md_04 {
+    flex-basis: calc(100% / 12 *  0); }
+
+  #zone-deploiement-detail {
+    flex-direction: row;
+    justify-content: space-between; }
+    #zone-deploiement-detail #deploiement_detail_gauche .gauche_un #detail_bombay_img1, #zone-deploiement-detail #deploiement_detail_gauche .gauche_un #detail_peakyblue_img1 {
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      height: 25rem; }
+    #zone-deploiement-detail #deploiement_detail_gauche .gauche_un #detail_bombay_img1 {
+      background-image: url("../img/content/big-CHR-59-01.jpg"); }
+    #zone-deploiement-detail #deploiement_detail_gauche .gauche_un #detail_peakyblue_img1 {
+      background-image: url("../img/content/big-CHR-peakyblue1.jpg"); }
+    #zone-deploiement-detail #deploiement_detail_gauche .gauche_quatre {
+      flex-direction: column; }
+      #zone-deploiement-detail #deploiement_detail_gauche .gauche_quatre [id*="detail_bombay_img"]:first-child, #zone-deploiement-detail #deploiement_detail_gauche .gauche_quatre [id*="detail_peakyblue_img"]:first-child {
+        margin-top: 0rem !important; }
+      #zone-deploiement-detail #deploiement_detail_gauche .gauche_quatre [id*="detail_bombay_img"], #zone-deploiement-detail #deploiement_detail_gauche .gauche_quatre [id*="detail_peakyblue_img"] {
+      /*
+          ========================================================================
+              Formatage des balises en (padding & margin)
+                  RESPECT d'un ordre sp├®cifique au niveau du traitement !
+      
+                  $padding_unique         : besoin d'un padding ("yes" or "no")
+                                          : "oui" (un padding doit s'appliquer)
+                                          : "non" (aucun padding ne s'appliquer)
+                  $margin_unique          : besoin d'un margin ("oui" ou "non")
+                                          : "oui" (un margin doit s'appliquer)
+                                          : "non" (aucun margin ne s'appliquer)
+                  $padding_top            : nombre indiqu├® = padding haut
+                                          : "non" (aucun padding haut ne sera d├®finit)
+                  $padding_right          : nombre indiqu├® = padding droite
+                                          : "non" (aucun padding droite ne sera d├®finit)
+                  $padding_bottom         : nombre indiqu├® = padding bas
+                                          : "non" (aucun padding bas ne sera d├®finit)
+                  $padding_left           : nombre indiqu├® = padding gauche
+                                          : "non" (aucun padding gauche ne sera d├®finit)
+                  $margin_top             : nombre indiqu├® = margin haut
+                                          : "non" (aucun margin haut ne sera d├®finit)
+                  $margin_right           : nombre indiqu├® = margin droite
+                                          : "non" (aucun margin droite ne sera d├®finit)
+                  $margin_bottom          : nombre indiqu├® = margin bas
+                                          : "non" (aucun margin bas ne sera d├®finit)
+                  $margin_left            : nombre indiqu├® = margin gauche
+                                          : "non" (aucun margin gauche ne sera d├®finit)
+    
+          ========================================================================
+      */
+        margin-top: 1rem !important;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center; }
+    #zone-deploiement-detail #deploiement_detail_droit {
+    /*
+        ========================================================================
+            Formatage des balises en (padding & margin)
+                RESPECT d'un ordre sp├®cifique au niveau du traitement !
+    
+                $padding_unique         : besoin d'un padding ("yes" or "no")
+                                        : "oui" (un padding doit s'appliquer)
+                                        : "non" (aucun padding ne s'appliquer)
+                $margin_unique          : besoin d'un margin ("oui" ou "non")
+                                        : "oui" (un margin doit s'appliquer)
+                                        : "non" (aucun margin ne s'appliquer)
+                $padding_top            : nombre indiqu├® = padding haut
+                                        : "non" (aucun padding haut ne sera d├®finit)
+                $padding_right          : nombre indiqu├® = padding droite
+                                        : "non" (aucun padding droite ne sera d├®finit)
+                $padding_bottom         : nombre indiqu├® = padding bas
+                                        : "non" (aucun padding bas ne sera d├®finit)
+                $padding_left           : nombre indiqu├® = padding gauche
+                                        : "non" (aucun padding gauche ne sera d├®finit)
+                $margin_top             : nombre indiqu├® = margin haut
+                                        : "non" (aucun margin haut ne sera d├®finit)
+                $margin_right           : nombre indiqu├® = margin droite
+                                        : "non" (aucun margin droite ne sera d├®finit)
+                $margin_bottom          : nombre indiqu├® = margin bas
+                                        : "non" (aucun margin bas ne sera d├®finit)
+                $margin_left            : nombre indiqu├® = margin gauche
+                                        : "non" (aucun margin gauche ne sera d├®finit)
+  
+        ========================================================================
+    */
+      margin-top: 0rem !important;
+      margin-left: 0rem !important; }
+
   .isl_google {
     border: none !important; }
 
@@ -467,9 +1014,6 @@ body, .container, .sous-container {
   #zone-pub {
     flex-direction: row; }
 
-  [class*="sm"], .partsall_ln1md_04 {
-    flex-basis: calc(100% / 12 *  0); }
-
   .gauche_four {
     flex-basis: calc(100% / 12 *  2); }
 
@@ -479,6 +1023,9 @@ body, .container, .sous-container {
 
   .deploiement-menu {
     flex-basis: calc(100% / 12 *  3); }
+
+  .gauche_quatre {
+    flex-basis: calc(100% / 12 *  3 - 0.5rem); }
 
   .index_ln5md_02, .index_ln5md_03, .index_ln5md_04 {
     flex-basis: calc(100% / 12 *  4 - 1rem) !important; }
@@ -496,6 +1043,9 @@ body, .container, .sous-container {
   #zone-info, #zone-contact {
     flex-basis: calc(100% / 12 *  6); }
 
+  #deploiement_detail_gauche, #deploiement_detail_droit {
+    flex-basis: calc(100% / 12 *  6 - 0.5rem); }
+
   #contenu_gauche, #contenu_droit {
     flex-basis: calc(100% / 12 *  6 - 0.10rem); }
 
@@ -507,6 +1057,10 @@ body, .container, .sous-container {
 
   .deploiement-article_md {
     flex-basis: calc(100% / 12 *  9); }
+
+  .gauche_un {
+    flex-basis: calc(100% / 12 *  9 - 0.5rem);
+    display: block !important; }
 
   #pub-col1 {
     flex-basis: calc(100% / 12 *  9); }
@@ -521,7 +1075,8 @@ body, .container, .sous-container {
   .catalogue_ln4sm_01, .catalogue_ln4md_01, .catalogue_ln4md_02, .catalogue_ln4md_03, .catalogue_ln4md_04,
   .detail_ln4md_01, .detail_ln4md_02, .detail_ln4md_03, .detail_ln4md_04, .detail_ln4md_05,
   #zone_infocontact,
-  #info_titre, #info_contenu, #contact_titre, #contact_contenu {
+  #info_titre, #info_contenu, #contact_titre, #contact_contenu,
+  #detail_bombay_img1, #detail_peakyblue_img1 {
     flex-basis: calc(100% / 12 *  12); }
 
   .gauche_four {
@@ -629,7 +1184,7 @@ body, .container, .sous-container {
       #zone_infocontact #infocontact_contact #contact_contenu #contenu_gauche textarea {
         display: none !important; }
       #zone_infocontact #infocontact_contact #contact_contenu #contenu_droit {
-        flex-basis: calc(100% / 12 * 6 - 0.5 rem);
+        flex-basis: calc(100% / 12 * 6 - 0.5rem);
         padding-right: 1rem;
         padding-bottom: 1rem; }
         #zone_infocontact #infocontact_contact #contact_contenu #contenu_droit textarea {
@@ -655,6 +1210,9 @@ body, .container, .sous-container {
     #zone-deploiement .deploiement-article_md {
       display: block;
       margin-top: 1rem; }
+      #zone-deploiement .deploiement-article_md .urlarticle {
+        text-decoration: none;
+        color: black; }
       #zone-deploiement .deploiement-article_md .article-souscontainer_md:first-child {
         border: 0.0625rem solid grey !important; }
       #zone-deploiement .deploiement-article_md .article-souscontainer_md {
@@ -702,9 +1260,7 @@ body, .container, .sous-container {
             margin-bottom: 0.5rem; }
           #zone-deploiement .deploiement-article_md .article-souscontainer_md .souscontainer-droite .prix {
             margin-top: 1rem;
-            padding: 0.2rem; }
-
-  /* ************************************************************************* */ }
+            padding: 0.2rem; } }
 .isl_google iframe {
   width: 100%;
   height: 15rem; }
@@ -713,8 +1269,90 @@ body, .container, .sous-container {
             Vue ORDINATEUR
 ============================================================================= */
 @media only screen and (min-width: 64rem) {
+  #zone-deploiement-detail {
+    width: 64rem;
+    margin-left: auto;
+    margin-right: auto; }
+    #zone-deploiement-detail #deploiement_detail_gauche {
+      flex-direction: column; }
+      #zone-deploiement-detail #deploiement_detail_gauche .gauche_un #detail_bombay_img1, #zone-deploiement-detail #deploiement_detail_gauche .gauche_un #detail_peakyblue_img1 {
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        height: 25rem; }
+      #zone-deploiement-detail #deploiement_detail_gauche .gauche_un #detail_bombay_img1 {
+        background-image: url("../img/content/big-CHR-59-02.jpg"); }
+      #zone-deploiement-detail #deploiement_detail_gauche .gauche_un #detail_peakyblue_img1 {
+        background-image: url("../img/content/big-CHR-peakyblue1.jpg"); }
+      #zone-deploiement-detail #deploiement_detail_gauche .gauche_quatre {
+      /*
+          ========================================================================
+              Formatage des balises en (padding & margin)
+                  RESPECT d'un ordre sp├®cifique au niveau du traitement !
+      
+                  $padding_unique         : besoin d'un padding ("yes" or "no")
+                                          : "oui" (un padding doit s'appliquer)
+                                          : "non" (aucun padding ne s'appliquer)
+                  $margin_unique          : besoin d'un margin ("oui" ou "non")
+                                          : "oui" (un margin doit s'appliquer)
+                                          : "non" (aucun margin ne s'appliquer)
+                  $padding_top            : nombre indiqu├® = padding haut
+                                          : "non" (aucun padding haut ne sera d├®finit)
+                  $padding_right          : nombre indiqu├® = padding droite
+                                          : "non" (aucun padding droite ne sera d├®finit)
+                  $padding_bottom         : nombre indiqu├® = padding bas
+                                          : "non" (aucun padding bas ne sera d├®finit)
+                  $padding_left           : nombre indiqu├® = padding gauche
+                                          : "non" (aucun padding gauche ne sera d├®finit)
+                  $margin_top             : nombre indiqu├® = margin haut
+                                          : "non" (aucun margin haut ne sera d├®finit)
+                  $margin_right           : nombre indiqu├® = margin droite
+                                          : "non" (aucun margin droite ne sera d├®finit)
+                  $margin_bottom          : nombre indiqu├® = margin bas
+                                          : "non" (aucun margin bas ne sera d├®finit)
+                  $margin_left            : nombre indiqu├® = margin gauche
+                                          : "non" (aucun margin gauche ne sera d├®finit)
+    
+          ========================================================================
+      */
+        margin-top: 1rem !important;
+        margin-left: 0rem !important;
+        flex-direction: row; }
+        #zone-deploiement-detail #deploiement_detail_gauche .gauche_quatre [id*="detail_bombay_img"]:nth-child(n+2), #zone-deploiement-detail #deploiement_detail_gauche .gauche_quatre [id*="detail_peakyblue_img"]:nth-child(n+2) {
+        /*
+            ========================================================================
+                Formatage des balises en (padding & margin)
+                    RESPECT d'un ordre sp├®cifique au niveau du traitement !
+        
+                    $padding_unique         : besoin d'un padding ("yes" or "no")
+                                            : "oui" (un padding doit s'appliquer)
+                                            : "non" (aucun padding ne s'appliquer)
+                    $margin_unique          : besoin d'un margin ("oui" ou "non")
+                                            : "oui" (un margin doit s'appliquer)
+                                            : "non" (aucun margin ne s'appliquer)
+                    $padding_top            : nombre indiqu├® = padding haut
+                                            : "non" (aucun padding haut ne sera d├®finit)
+                    $padding_right          : nombre indiqu├® = padding droite
+                                            : "non" (aucun padding droite ne sera d├®finit)
+                    $padding_bottom         : nombre indiqu├® = padding bas
+                                            : "non" (aucun padding bas ne sera d├®finit)
+                    $padding_left           : nombre indiqu├® = padding gauche
+                                            : "non" (aucun padding gauche ne sera d├®finit)
+                    $margin_top             : nombre indiqu├® = margin haut
+                                            : "non" (aucun margin haut ne sera d├®finit)
+                    $margin_right           : nombre indiqu├® = margin droite
+                                            : "non" (aucun margin droite ne sera d├®finit)
+                    $margin_bottom          : nombre indiqu├® = margin bas
+                                            : "non" (aucun margin bas ne sera d├®finit)
+                    $margin_left            : nombre indiqu├® = margin gauche
+                                            : "non" (aucun margin gauche ne sera d├®finit)
+      
+            ========================================================================
+        */
+          margin-top: 0rem !important; }
+
   .container {
-    width: 1024px;
+    width: 64rem;
     margin-left: auto;
     margin-right: auto; }
 
@@ -744,18 +1382,23 @@ body, .container, .sous-container {
   .contact_ln6xl_03 {
     flex-basis: calc(100% / 12 *  6); }
 
+  #deploiement_detail_gauche, #deploiement_detail_droit {
+    flex-basis: calc(100% / 12 *  6 - 0.5rem); }
+
   .deploiement-article_xl,
   .deploiement_droite {
     flex-basis: calc(100% / 12 *  9); }
 
+  /*
   .nno {
-    display: flex !important;
-    width: 100%;
-    flex-wrap: wrap !important;
-    flex-basis: calc(100% / 12 *  9);
-    background-color: transparent;
-    justify-content: space-between; }
-
+      display: flex!important;
+      width: 100%;
+      //flex-wrap: wrap!important;
+      flex-basis: calc(100% / 12 *  9)!important;
+      background-color: transparent;
+      //justify-content: space-between;
+  }
+  */
   .partsici_ln3xl_01,
   .contact_ln4xl_01,
   .contact_ln6xl_01,
@@ -763,7 +1406,9 @@ body, .container, .sous-container {
   .catalogue_ln4xl_01, .catalogue_ln4xl_02, .catalogue_ln4xl_03, .catalogue_ln4xl_04,
   .gauche_one, .gauche_four,
   .detail_ln4xl_01,
-  #zone-deploiement {
+  #zone-deploiement,
+  .gauche_un, .gauche_quatre,
+  #detail_bombay_img1, #detail_peakyblue_img1 {
     flex-basis: calc(100% / 12 *  12); }
 
   .partsall_ln1xl_04 {
@@ -785,33 +1430,41 @@ body, .container, .sous-container {
     display: flex;
     flex-wrap: wrap; }
 
-  #zone-deploiement .nno .nne:nth-of-type(3n+1) {
-    margin-left: 0rem; }
-  #zone-deploiement .nno .nne:last-child {
-    margin-right: calc(100% / 12 * 4 + 0.25rem); }
-  #zone-deploiement .nno .nne {
-    background-color: transparent;
-    flex-basis: calc(100% / 12 * 4 - 0.5rem);
-    height: 32rem;
-    flex-direction: column;
-    margin: 0rem;
-    margin-bottom: 1rem; }
-    #zone-deploiement .nno .nne .souscontainer-droite {
-      margin: 0rem !important;
-      padding-left: 0.5rem;
-      padding-right: 0.5rem; }
-      #zone-deploiement .nno .nne .souscontainer-droite .model {
-        margin-top: 0.5rem !important; }
-      #zone-deploiement .nno .nne .souscontainer-droite .texte {
-        height: 8rem; }
-      #zone-deploiement .nno .nne .souscontainer-droite .prix {
-        text-align: right;
-        margin-top: 2.3rem;
-        background-color: white; }
-  #zone-deploiement .nno .nne:hover {
-    box-shadow: 1px 1px 12px grey; }
-    #zone-deploiement .nno .nne:hover .souscontainer-droite .prix {
-      background-color: #A6D1E4; } }
+  #zone-deploiement .nno {
+    display: flex !important;
+    flex-wrap: wrap;
+    flex-basis: calc(100% / 12 *  9) !important;
+    margin-top: 1 !important; }
+    #zone-deploiement .nno .urlarticle {
+      flex-basis: calc(100% / 12 * 4 - 0.5rem);
+      text-decoration: none;
+      color: black; }
+    #zone-deploiement .nno .urlarticle:nth-of-type(3n+2) {
+      margin-right: calc((0.5rem * 3) / 2) !important;
+      margin-left: calc((0.5rem * 3) / 2) !important; }
+    #zone-deploiement .nno .nne {
+      background-color: transparent;
+      flex-basis: calc(100% / 12 * 4 - 0.5rem);
+      height: 32rem;
+      flex-direction: column;
+      margin: 0rem;
+      margin-bottom: 1rem; }
+      #zone-deploiement .nno .nne .souscontainer-droite {
+        margin: 0rem !important;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem; }
+        #zone-deploiement .nno .nne .souscontainer-droite .model {
+          margin-top: 0.5rem !important; }
+        #zone-deploiement .nno .nne .souscontainer-droite .texte {
+          height: 8rem; }
+        #zone-deploiement .nno .nne .souscontainer-droite .prix {
+          text-align: right;
+          margin-top: 2.3rem;
+          background-color: white; }
+    #zone-deploiement .nno .nne:hover {
+      box-shadow: 1px 1px 12px grey; }
+      #zone-deploiement .nno .nne:hover .souscontainer-droite .prix {
+        background-color: #A6D1E4; } }
 /*
 display: none!important;
 display: block!important;

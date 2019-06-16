@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
     <head>
-	<title>Vintage - accessoires</title>
+	<title>Les accessoires disponibles</title>
 	<meta charset="utf-8">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/styles.css">

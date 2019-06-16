@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
     <head>
-        <title>Vintage - home</title>
+        <title>Les meubles Vintages</title>
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="css/styles.css">
         <?php include 'includes/fonts/fonts.php'; ?>
@@ -13,22 +13,22 @@
         <?php include 'includes/pages/zoneici-home.php'; ?>
         <?php include 'includes/pages/zoneici-end.php'; ?>
 
-        <section id="zone-banniere">
-            <!-- bloc zone-banniere ---------------------------------------- -->
-            <!-- index_ : balise propre à la page index.php ---------------- -->
-            <article class="index_ln4sm_01 index_ln4md_01 index_ln4xl_01 banniere_img"></article>
-        </section>
+        <div id="zone-banniere">
+            <!-- bloc zone-banniere ======================================== -->
+            <!-- index_ : balise propre à la page index.php ================ -->
+            <div class="index_ln4sm_01 index_ln4md_01 index_ln4xl_01 banniere_img"></div>
+        </div>
 
         <div class="container">
             <div class="sous-container">
-                <!-- bloc zone-pub ----------------------------------------- -->
+                <!-- bloc zone-pub ========================================= -->
                 <!-- index_ : balise propre à la page index.php              -->
-                <section id="zone-pub">
+                <div id="zone-pub">
                     <div id="pub-col1">
-                        <article class="index_ln5sm_01 index_ln5md_01 index_ln5xl_01 gazzda"></article>
-                        <article class="index_ln5sm_02 index_ln5md_02 index_ln5xl_02 liam"></article>
-                        <article class="index_ln5sm_03 index_ln5md_03 index_ln5xl_03 vita"></article>
-                        <article class="index_ln5sm_04 index_ln5md_04 index_ln5xl_04 degres"></article>
+                        <div class="index_ln5sm_01 index_ln5md_01 index_ln5xl_01 gazzda"></div>
+                        <div class="index_ln5sm_02 index_ln5md_02 index_ln5xl_02 liam"></div>
+                        <div class="index_ln5sm_03 index_ln5md_03 index_ln5xl_03 vita"></div>
+                        <div class="index_ln5sm_04 index_ln5md_04 index_ln5xl_04 degres"></div>
                     </div>
                     <div id="pub-col2">
                         <div id="col2_cadre1"> </div>
@@ -45,7 +45,7 @@
                             <div id="ouverture_suite">+ lire la suite</div>
                         </div>
                     </div>
-                </section>
+                </div>
             </div>
         </div>
     </body>

@@ -1,3 +1,3 @@
-</article>
+</div>
             </div>
-        </section>
+        </div>

@@ -1,1 +1,1 @@
-<span>accessoires<span>
+<span>accessoires</span>
